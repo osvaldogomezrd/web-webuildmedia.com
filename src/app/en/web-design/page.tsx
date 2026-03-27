@@ -8,10 +8,9 @@ export const metadata: Metadata = makePageMetadata({
   description:
     "Professional web design service with SEO, development, and maintenance. Clear pricing, a 30-day process, and direct WhatsApp contact.",
   path: "/en/web-design",
-  languages: makeLanguageAlternates("/diseno-web", "/en/web-design"),
+  languages: makeLanguageAlternates("/services/diseno-web", "/en/web-design"),
 });
 
 export default function EnglishWebDesignPage() {
   return <DisenoWebPage />;
 }
-

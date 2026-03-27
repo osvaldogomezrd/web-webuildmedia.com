@@ -61,6 +61,8 @@ export function toLocalePath(pathname: string, targetLocale: SiteLocale): string
   if (targetLocale === "en") {
     if (normalized === "/") return "/en";
     if (normalized === "/diseno-web") return "/en/web-design";
+    if (normalized === "/services/diseno-web") return "/en/web-design";
+    if (normalized.startsWith("/services/")) return "/en";
     if (normalized.startsWith("/industries/")) {
       const esSlug = normalized.replace("/industries/", "") as IndustrySlug;
       const enSlug = INDUSTRY_ES_TO_EN[esSlug];
@@ -70,7 +72,7 @@ export function toLocalePath(pathname: string, targetLocale: SiteLocale): string
   }
 
   if (normalized === "/en") return "/";
-  if (normalized === "/en/web-design") return "/diseno-web";
+  if (normalized === "/en/web-design") return "/services/diseno-web";
   if (normalized.startsWith("/en/industries/")) {
     const enSlug = normalized.replace("/en/industries/", "") as IndustryEnSlug;
     const esSlug = INDUSTRY_EN_TO_ES[enSlug];
@@ -92,4 +94,3 @@ export function makeLanguageAlternates(esPath: string, enPath: string): Record<s
     "x-default": esPath,
   };
 }
-

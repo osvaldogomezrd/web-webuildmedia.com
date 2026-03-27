@@ -293,14 +293,14 @@ export function IndustryPageTemplate({
         serviceLinks={
           locale === "en"
             ? [
-                { label: "Web Design", href: "/en/web-design" },
+                { label: "Web Design", href: "/services/diseno-web" },
                 { label: "Industries", href: "/en/industries/real-estate" },
                 { label: "Current Industry", href: currentIndustryHref },
                 { label: "Plans", href: "/en#precios" },
                 { label: "Contact / WhatsApp", href: getWhatsAppUrl(content.form.whatsappMessage) },
               ]
             : [
-                { label: "Servicios", href: "/diseno-web" },
+                { label: "Servicios", href: "/services/diseno-web" },
                 { label: "Industrias", href: "/industries/real-estate" },
                 { label: "Industria actual", href: currentIndustryHref },
                 { label: "Planes", href: "/#precios" },

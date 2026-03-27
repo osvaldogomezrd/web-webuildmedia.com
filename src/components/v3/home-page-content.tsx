@@ -112,27 +112,27 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
       children: [
         {
           label: isEs ? "Diseño web" : "Web Design",
-          href: isEs ? "/diseno-web" : "/en/web-design",
+          href: "/services/diseno-web",
           description: isEs ? "Sitios profesionales orientados a conversión" : "Conversion-focused professional websites",
         },
         {
           label: isEs ? "Landing pages" : "Landing Pages",
-          href: "#services",
+          href: "/services/landing-pages",
           description: isEs ? "Páginas enfocadas en campañas y leads" : "Campaign pages built for lead capture",
         },
         {
           label: "Ecommerce",
-          href: "#services",
+          href: "/services/ecommerce",
           description: isEs ? "Tiendas online listas para vender" : "Online stores ready to sell",
         },
         {
           label: isEs ? "Rediseño web" : "Website Redesign",
-          href: "#services",
+          href: "/services/rediseno-web",
           description: isEs ? "Mejora de sitios existentes" : "Upgrade and optimize your current website",
         },
         {
           label: isEs ? "Soluciones personalizadas" : "Custom Solutions",
-          href: "#services",
+          href: "/services/soluciones-personalizadas",
           description: isEs ? "Funcionalidades avanzadas para necesidades específicas" : "Advanced functionality for specific needs",
         },
       ],
@@ -495,11 +495,11 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
         whatsappLabel={isEs ? "Conversar con un agente vía WhatsApp" : "Chat on WhatsApp"}
         locale={locale}
         serviceLinks={[
-          { label: isEs ? "Diseño web" : "Web Design", href: "#services" },
-          { label: "Landing Pages", href: "#services" },
-          { label: "Ecommerce", href: "#services" },
-          { label: isEs ? "Rediseño web" : "Website Redesign", href: "#services" },
-          { label: isEs ? "Soluciones personalizadas" : "Custom Solutions", href: "#services" },
+          { label: isEs ? "Diseño web" : "Web Design", href: "/services/diseno-web" },
+          { label: "Landing Pages", href: "/services/landing-pages" },
+          { label: "Ecommerce", href: "/services/ecommerce" },
+          { label: isEs ? "Rediseño web" : "Website Redesign", href: "/services/rediseno-web" },
+          { label: isEs ? "Soluciones personalizadas" : "Custom Solutions", href: "/services/soluciones-personalizadas" },
         ]}
         extraLinks={[
           { label: isEs ? "Industrias" : "Industries", href: "#industries" },

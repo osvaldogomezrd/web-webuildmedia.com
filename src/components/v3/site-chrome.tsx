@@ -34,11 +34,11 @@ const defaultHeaderNav: HeaderNavItem[] = [
   {
     label: "Servicios",
     children: [
-      { label: "Diseño web", href: "/diseno-web", description: "Sitios profesionales orientados a conversión" },
-      { label: "Landing pages", href: "/landing-page-design", description: "Páginas enfocadas en campañas y leads" },
-      { label: "Ecommerce", href: "/ecommerce-websites", description: "Tiendas online listas para vender" },
-      { label: "Rediseño web", href: "/website-redesign", description: "Mejora de sitios existentes" },
-      { label: "Soluciones personalizadas", href: "/custom-website-solutions", description: "Funcionalidades avanzadas para necesidades específicas" },
+      { label: "Diseño web", href: "/services/diseno-web", description: "Sitios profesionales orientados a conversión" },
+      { label: "Landing pages", href: "/services/landing-pages", description: "Páginas enfocadas en campañas y leads" },
+      { label: "Ecommerce", href: "/services/ecommerce", description: "Tiendas online listas para vender" },
+      { label: "Rediseño web", href: "/services/rediseno-web", description: "Mejora de sitios existentes" },
+      { label: "Soluciones personalizadas", href: "/services/soluciones-personalizadas", description: "Funcionalidades avanzadas para necesidades específicas" },
     ],
   },
   {
@@ -257,13 +257,13 @@ const footerColumns = [
   {
     title: "Services",
     links: [
-      { label: "Web Design", href: "/diseno-web" },
+      { label: "Web Design", href: "/services/diseno-web" },
       { label: "Web Development", href: "/web-development" },
-      { label: "Landing Page Design", href: "/landing-page-design" },
-      { label: "Ecommerce Websites", href: "/ecommerce-websites" },
-      { label: "Website Redesign", href: "/website-redesign" },
+      { label: "Landing Page Design", href: "/services/landing-pages" },
+      { label: "Ecommerce Websites", href: "/services/ecommerce" },
+      { label: "Website Redesign", href: "/services/rediseno-web" },
       { label: "Maintenance and Support", href: "/maintenance-support" },
-      { label: "Custom Website Solutions", href: "/custom-website-solutions" },
+      { label: "Custom Website Solutions", href: "/services/soluciones-personalizadas" },
     ],
   },
   {
