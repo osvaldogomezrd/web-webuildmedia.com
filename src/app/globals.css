@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-poppins: 'Poppins', system-ui, sans-serif;
+  --ds-border-color: rgba(0, 0, 0, 0.1);
 }
 
 @layer base {
@@ -18,9 +19,9 @@
   }
 
   body {
-    font-family: var(--font-inter);
-    background-color: #09090b;
-    color: #fafafa;
+    font-family: var(--font-poppins);
+    background-color: #ffffff;
+    color: #0f172a;
     line-height: 1.6;
   }
 
@@ -31,30 +32,190 @@
 }
 
 @layer components {
+  .ds-h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+  }
+
+  .ds-h2 {
+    font-size: clamp(2rem, 4.2vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+  }
+
+  .ds-h3 {
+    font-size: clamp(1.75rem, 3.8vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+  }
+
+  .ds-h4 {
+    font-size: clamp(1.5rem, 3.2vw, 1.75rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+  }
+
+  .ds-h5 {
+    font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+  }
+
+  .ds-h6 {
+    font-size: 1.25rem;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+  }
+
+  .ds-eyebrow {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
   .section-padding {
-    @apply py-20 md:py-28 lg:py-32;
+    @apply py-[112px];
   }
 
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-16;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-amber-700;
   }
 
-  .card-dark {
-    @apply bg-zinc-900 border border-zinc-800 rounded-2xl;
+  .card-light {
+    @apply bg-white border border-slate-200 rounded-2xl shadow-sm;
+  }
+
+  .ds-border {
+    border: 1px solid var(--ds-border-color);
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:border-amber-500/30 hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-1;
+  }
+
+  .below-hero-title {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: rgb(30, 30, 30);
+    font-size: clamp(28px, 4.2vw, 48px);
+    line-height: clamp(32px, 4.8vw, 56px);
+  }
+
+  .hero-max-h {
+    max-height: 858px;
+    overflow: hidden;
+  }
+
+  .hero-title-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-break: break-word;
+  }
+
+  .site-hero-title {
+    font-size: 75px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+  }
+
+  .hero-copy-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    word-break: break-word;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .ticker-left {
+    animation: ticker-left 36s linear infinite;
+  }
+
+  .ticker-right {
+    animation: ticker-right 36s linear infinite;
+  }
+}
+
+@keyframes ticker-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ticker-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.storybook-canvas,
+.storybook-canvas * {
+  box-sizing: border-box;
+}
+
+.storybook-canvas {
+  overflow-x: clip;
+}
+
+.storybook-canvas > * {
+  max-width: 100%;
+}
+
+.storybook-canvas .v3-container {
+  max-width: 100%;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+.demo-hero-font-style .ds-h2 {
+  font-size: 75px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 1024px) {
+  .storybook-canvas .v3-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .demo-hero-font-style .ds-h2 {
+    font-size: clamp(2.5rem, 8vw, 4.6875rem);
+    line-height: 1.08;
+  }
+
+  .site-hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.6875rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
   }
 }
 
@@ -63,10 +224,10 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #3f3f46;
+  background: #cbd5e1;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {

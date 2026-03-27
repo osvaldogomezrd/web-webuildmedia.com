@@ -9,8 +9,8 @@ const projects = [
     description:
       "Luxury villa rental platform with availability calendar, gallery, and direct WhatsApp booking integration.",
     result: "+280% booking inquiries",
-    gradient: "from-blue-600/20 via-cyan-500/10 to-transparent",
-    accentColor: "text-cyan-400",
+    gradient: "from-blue-100 via-cyan-50 to-slate-50",
+    accentColor: "text-cyan-600",
     tags: ["Booking System", "WhatsApp", "Mobile-first"],
   },
   {
@@ -19,8 +19,8 @@ const projects = [
     description:
       "Property showcase site with lead capture, virtual tours, and a CRM-connected contact form for a Punta Cana real estate firm.",
     result: "+190% qualified leads",
-    gradient: "from-amber-600/20 via-orange-500/10 to-transparent",
-    accentColor: "text-amber-400",
+    gradient: "from-amber-100 via-orange-50 to-slate-50",
+    accentColor: "text-amber-600",
     tags: ["Lead Gen", "Property Listings", "SEO"],
   },
   {
@@ -29,8 +29,8 @@ const projects = [
     description:
       "Premium restaurant site with online menu, reservation form, and event pages that drive direct bookings.",
     result: "3× more reservations",
-    gradient: "from-purple-600/20 via-pink-500/10 to-transparent",
-    accentColor: "text-purple-400",
+    gradient: "from-purple-100 via-pink-50 to-slate-50",
+    accentColor: "text-purple-600",
     tags: ["Reservations", "Menu Design", "Local SEO"],
   },
   {
@@ -39,8 +39,8 @@ const projects = [
     description:
       "Excursion booking site with tour packages, pricing tables, and WhatsApp CTA on every page to capture tourist traffic.",
     result: "+400% WhatsApp contacts",
-    gradient: "from-green-600/20 via-emerald-500/10 to-transparent",
-    accentColor: "text-green-400",
+    gradient: "from-green-100 via-emerald-50 to-slate-50",
+    accentColor: "text-green-600",
     tags: ["Tour Packages", "WhatsApp Funnel", "Conversion"],
   },
   {
@@ -49,8 +49,8 @@ const projects = [
     description:
       "High-end medical aesthetic site with service pages, appointment booking, and trust-building testimonials.",
     result: "+150% appointment requests",
-    gradient: "from-rose-600/20 via-pink-500/10 to-transparent",
-    accentColor: "text-rose-400",
+    gradient: "from-rose-100 via-pink-50 to-slate-50",
+    accentColor: "text-rose-600",
     tags: ["Appointment Booking", "Premium Design", "Trust Building"],
   },
   {
@@ -59,24 +59,24 @@ const projects = [
     description:
       "Immersive landing page for a beach club with event listings, table reservations, and social media integration.",
     result: "Fully sold-out events",
-    gradient: "from-indigo-600/20 via-violet-500/10 to-transparent",
-    accentColor: "text-indigo-400",
+    gradient: "from-indigo-100 via-violet-50 to-slate-50",
+    accentColor: "text-indigo-600",
     tags: ["Events", "Table Reservations", "Social Integration"],
   },
 ];
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="section-padding bg-zinc-950">
+    <section id="portfolio" className="section-padding bg-white">
       <Container>
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center gap-4">
           <SectionLabel>Our work</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight text-balance">
-            Results we&apos;ve built for{" "}
-            <span className="gradient-text">businesses like yours</span>
+          <h2 className="below-hero-title text-center">
+            <span className="block">Results we&apos;ve built for</span>
+            <span className="block">businesses like yours</span>
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl text-balance">
+          <p className="max-w-2xl text-base leading-[22.4px] text-[#3d3d3d]">
             Every project starts with a clear business goal. Here&apos;s a look
             at what we&apos;ve built and what it achieved.
           </p>
@@ -87,32 +87,32 @@ export function Portfolio() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group card-dark card-hover overflow-hidden flex flex-col"
+              className="group flex flex-col overflow-hidden rounded-[4px] border border-black/10 bg-[#f6f6f6] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
             >
               {/* Visual preview */}
               <div
-                className={`relative h-48 bg-gradient-to-br ${project.gradient} bg-zinc-900 overflow-hidden`}
+                className={`relative h-48 bg-gradient-to-br ${project.gradient} overflow-hidden`}
               >
-                {/* Simulated browser mockup inside card */}
-                <div className="absolute inset-4 rounded-xl bg-zinc-900/80 border border-zinc-700/40 overflow-hidden">
-                  <div className="flex items-center gap-1.5 px-3 py-2 bg-zinc-800/80 border-b border-zinc-700/40">
-                    <div className="w-2 h-2 rounded-full bg-zinc-600" />
-                    <div className="w-2 h-2 rounded-full bg-zinc-600" />
-                    <div className="w-2 h-2 rounded-full bg-zinc-600" />
+                {/* Simulated browser mockup */}
+                <div className="absolute inset-4 rounded-xl bg-white border border-slate-200 shadow-sm overflow-hidden">
+                  <div className="flex items-center gap-1.5 px-3 py-2 bg-slate-50 border-b border-slate-200">
+                    <div className="w-2 h-2 rounded-full bg-slate-300" />
+                    <div className="w-2 h-2 rounded-full bg-slate-300" />
+                    <div className="w-2 h-2 rounded-full bg-slate-300" />
                   </div>
                   <div className="p-3 space-y-2">
-                    <div className="h-2.5 w-3/4 rounded-full bg-zinc-700/60" />
-                    <div className="h-4 w-full rounded bg-zinc-700/40" />
-                    <div className="h-2.5 w-2/3 rounded-full bg-zinc-700/40" />
+                    <div className="h-2.5 w-3/4 rounded-full bg-slate-200" />
+                    <div className="h-4 w-full rounded bg-slate-100" />
+                    <div className="h-2.5 w-2/3 rounded-full bg-slate-100" />
                     <div className="flex gap-2 pt-1">
-                      <div className="h-6 w-16 rounded-lg bg-amber-500/50" />
-                      <div className="h-6 w-16 rounded-lg bg-zinc-700/40" />
+                      <div className="h-6 w-16 rounded-lg bg-amber-400/60" />
+                      <div className="h-6 w-16 rounded-lg bg-slate-200" />
                     </div>
                   </div>
                 </div>
 
                 {/* Result badge */}
-                <div className="absolute top-3 right-3 bg-zinc-950/90 backdrop-blur-sm border border-zinc-700/60 rounded-lg px-2.5 py-1.5">
+                <div className="absolute top-3 right-3 bg-white border border-slate-200 rounded-lg px-2.5 py-1.5 shadow-sm">
                   <span className={`text-xs font-bold ${project.accentColor}`}>
                     {project.result}
                   </span>
@@ -122,19 +122,19 @@ export function Portfolio() {
               {/* Content */}
               <div className="p-6 flex flex-col gap-3 flex-1">
                 <div>
-                  <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">
+                  <span className="text-xs font-medium uppercase tracking-wider text-[#3d3d3d]">
                     {project.category}
                   </span>
-                  <h3 className="text-lg font-bold text-white mt-1 group-hover:text-amber-400 transition-colors duration-200 flex items-center gap-1">
+                  <h3 className="mt-1 flex items-center gap-1 text-[20px] leading-[28px] tracking-[-0.4px] font-medium text-[#1e1e1e] transition-colors duration-200 group-hover:text-[#413df2]">
                     {project.title}
                     <ArrowUpRight
                       size={16}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-amber-400"
+                      className="text-[#413df2] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                       aria-hidden="true"
                     />
                   </h3>
                 </div>
-                <p className="text-sm text-zinc-400 leading-relaxed flex-1">
+                <p className="flex-1 text-base leading-[22.4px] text-[#3d3d3d]">
                   {project.description}
                 </p>
                 {/* Tags */}
@@ -142,7 +142,7 @@ export function Portfolio() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] font-medium bg-zinc-800 border border-zinc-700/60 text-zinc-400 rounded-full px-2.5 py-0.5"
+                      className="rounded-full border border-black/20 bg-white px-2.5 py-0.5 text-[10px] font-medium text-[#3d3d3d]"
                     >
                       {tag}
                     </span>
@@ -154,7 +154,7 @@ export function Portfolio() {
         </div>
 
         {/* Bottom note */}
-        <p className="text-center text-sm text-zinc-600 mt-10">
+        <p className="mt-10 text-center text-sm text-[#3d3d3d]">
           * Projects shown as representative examples. Real case studies available upon request.
         </p>
       </Container>

@@ -72,16 +72,16 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="section-padding bg-zinc-950">
+    <section id="services" className="section-padding bg-white">
       <Container>
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center gap-4">
           <SectionLabel>What we do</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight text-balance">
-            Everything you need to{" "}
-            <span className="gradient-text">convert online</span>
+          <h2 className="below-hero-title text-center">
+            <span className="block">Everything you need to</span>
+            <span className="block">convert online</span>
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl text-balance">
+          <p className="max-w-2xl text-base leading-[22.4px] text-[#3d3d3d]">
             A full-stack web presence built for results. From design and
             development to integrations and SEO — we handle it all.
           </p>
@@ -94,25 +94,25 @@ export function Services() {
             return (
               <article
                 key={service.title}
-                className="group card-dark card-hover p-5 flex flex-col gap-3 relative overflow-hidden"
+                className="group relative flex flex-col gap-4 overflow-hidden rounded-[4px] border border-black/10 bg-[#f6f6f6] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm"
               >
                 {/* Tag */}
-                <span className="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-widest text-zinc-600">
+                <span className="absolute right-4 top-4 rounded-full border border-black/15 px-3 py-1 text-[10px] font-medium uppercase tracking-widest text-[#3d3d3d]">
                   {service.tag}
                 </span>
 
-                <div className="w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700/60 flex items-center justify-center transition-all duration-300 group-hover:bg-amber-500/15 group-hover:border-amber-500/30">
+                <div className="flex h-10 w-10 items-center justify-center rounded-[4px] border border-black/10 bg-white transition-all duration-300 group-hover:border-[#413df2]/30">
                   <Icon
                     size={18}
-                    className="text-zinc-400 transition-colors duration-300 group-hover:text-amber-400"
+                    className="text-[#413df2] transition-colors duration-300"
                     aria-hidden="true"
                   />
                 </div>
 
-                <h3 className="text-sm font-bold text-white leading-snug mt-1">
+                <h3 className="mt-1 text-[20px] leading-[28px] tracking-[-0.4px] font-medium text-[#1e1e1e]">
                   {service.title}
                 </h3>
-                <p className="text-xs text-zinc-500 leading-relaxed">
+                <p className="text-base leading-[22.4px] text-[#3d3d3d]">
                   {service.description}
                 </p>
               </article>
