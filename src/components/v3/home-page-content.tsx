@@ -1,106 +1,81 @@
 import {
-  ClientLogosOutcomeSection,
+  BelowTheFoldSection,
   ClientVoicesCarouselSection,
   DarkOverlayHeroSection,
-  FeaturedSectionImageLeft,
+  FeaturedBlackSection,
   HoverRevealServicesSection,
-  KeyFeatureGridSection,
   LeadCaptureSection,
   PricingItem,
   PricingSection,
   ProcessSection,
-  Section2MissionSplit,
   TestimonialBannerSection,
 } from "@/components/v3/sections";
 import { HomeV3Footer, HomeV3Header } from "@/components/v3/site-chrome";
 
 type Locale = "es" | "en";
 
+const pricingPlansEs: PricingItem[] = [
+  {
+    plan: "Essential",
+    price: "$49.99 USD / mes",
+    audience:
+      "350 USD de inscripción · Ideal para emprendedores y negocios pequeños que necesitan una presencia profesional y comenzar a generar leads rápidamente.",
+    features: [
+      "Diseño y desarrollo de sitio web moderno, profesional y responsivo",
+      "Dominio .com y hosting básico incluido",
+      "Diseño 100% personalizado según tu marca",
+      "Formulario de contactos básicos",
+      "Integración con redes sociales",
+      "Botón de WhatsApp único",
+      "Certificado de seguridad SSL",
+      "Blog autogestionable para compartir contenido",
+      "2 cuentas de correo profesional con tu dominio",
+      "Soporte técnico vía Helpdesk",
+      "10 GB de espacio web",
+    ],
+    whatsappMessage:
+      "Hola, estoy interesado en el plan Essential ($49.99 USD/mes, inscripción de $350 USD). Me gustaría recibir más información sobre este servicio.",
+  },
+  {
+    plan: "Business",
+    price: "$74.99 USD / mes",
+    audience:
+      "450 USD de inscripción · Perfecto para negocios que quieren un sitio completo que convierta visitantes en clientes y les ayude a crecer de forma constante.",
+    highlight: true,
+    features: [
+      "Incluye todo lo del Plan Essential, más:",
+      "Catálogo de productos o servicios: Muestra de manera dinámica lo que puedes hacer",
+      "Formularios de contacto inteligentes: Con campos dinámicos, validaciones y respuestas automáticas",
+      "Botón de WhatsApp múltiple o chat flotante en vivo",
+      "Hasta 10 cuentas de correo profesional: Más espacio para tu equipo",
+      "Hosting más rápido: Servidores optimizados para mejor tiempo de carga y rendimiento",
+      "25 GB de espacio web: Mayor capacidad de almacenamiento",
+    ],
+    whatsappMessage:
+      "Hola, estoy interesado en el plan Business ($74.99 USD/mes, inscripción de $450 USD). Me gustaría recibir más información sobre este servicio.",
+  },
+  {
+    plan: "Ecommerce",
+    price: "$145 USD / mes",
+    audience:
+      "1,200 USD de inscripción · Diseñado para negocios que quieren vender online de forma profesional, automatizar procesos y escalar sus ingresos.",
+    features: [
+      "Incluye todo lo del Plan Business, más:",
+      "Tienda en línea completa: Muestra tus productos y servicios, y haz que te compren de inmediato",
+      "Integración con pasarelas de pago: Stripe, Cardnet, Azul, Visanet, PayPal y otras",
+      "Panel de administración para autogestión: Administra tus textos, productos y publicaciones sin depender de nadie",
+      "Hosting ultra veloz: Servidores optimizados para máxima velocidad y mejor rendimiento SEO",
+      "Más de 10 cuentas de correo electrónico (costo adicional por cuenta)",
+      "Más de 25 GB de espacio web (costo adicional por GB)",
+    ],
+    whatsappMessage:
+      "Hola, estoy interesado en el plan Ecommerce ($145 USD/mes, inscripción de $1,200 USD). Me gustaría recibir más información sobre este servicio.",
+  },
+];
+
 const pricingPlansByLocale: Record<Locale, PricingItem[]> = {
-  es: [
-    {
-      plan: "Essential",
-      price: "$49.99 / mes",
-      audience: "Matrícula de $350 · Para negocios que necesitan una web profesional y captación clara de leads",
-      features: [
-        "Diseño y desarrollo web moderno, profesional y responsivo",
-        "Dominio .com y hosting básico incluido",
-        "Diseño 100% adaptado a tu marca",
-        "Formulario de contacto básico",
-        "Integración con redes sociales",
-        "Botón único de WhatsApp",
-      ],
-    },
-    {
-      plan: "Business",
-      price: "$74.99 USD / mes",
-      audience: "Matrícula de $450 · Ideal para equipos que necesitan mayor flujo de leads y mejor conversión",
-      highlight: true,
-      features: [
-        "Todo lo incluido en Essential",
-        "Catálogo de productos o servicios",
-        "Formularios inteligentes con validaciones y respuestas automáticas",
-        "Múltiples botones de WhatsApp o chat flotante",
-        "Hasta 10 correos profesionales",
-        "Hosting más rápido y 25 GB de espacio web",
-      ],
-    },
-    {
-      plan: "Ecommerce",
-      price: "$99.99 USD / mes",
-      audience: "Matrícula de $550 · Para negocios listos para vender online con una tienda orientada a conversión",
-      features: [
-        "Todo lo incluido en Business",
-        "Tienda online completa",
-        "Integración con pasarelas de pago",
-        "Panel autogestionable para productos y contenido",
-        "Hosting ultra rápido",
-        "Escalabilidad de correos y almacenamiento",
-      ],
-    },
-  ],
-  en: [
-    {
-      plan: "Essential",
-      price: "$49.99 / month",
-      audience: "$350 registration fee · For businesses that need a professional website and clear lead capture",
-      features: [
-        "Modern, professional, responsive website design and development",
-        ".com domain and basic hosting included",
-        "100% design customized to your brand",
-        "Basic contact form",
-        "Social media integration",
-        "Unique WhatsApp button",
-      ],
-    },
-    {
-      plan: "Business",
-      price: "$74.99 USD / month",
-      audience: "$450 registration fee · Built for teams that need stronger lead flow and better conversion support",
-      highlight: true,
-      features: [
-        "Everything in the Essential plan",
-        "Product or service catalog",
-        "Smart contact forms with validations and auto-responses",
-        "Multiple WhatsApp buttons or floating live chat",
-        "Up to 10 professional email accounts",
-        "Faster hosting and 25 GB web space",
-      ],
-    },
-    {
-      plan: "Ecommerce",
-      price: "$99.99 USD / month",
-      audience: "$550 registration fee · For businesses ready to sell online with a conversion-focused store",
-      features: [
-        "Everything in the Business plan",
-        "Complete online store",
-        "Payment gateway integration",
-        "Self-managed admin panel",
-        "Ultra-fast hosting",
-        "Scalable email and storage capacity",
-      ],
-    },
-  ],
+  es: pricingPlansEs,
+  en: pricingPlansEs,
 };
 
 export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
@@ -213,56 +188,190 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
         />
       </div>
 
-      <ClientLogosOutcomeSection
+      <BelowTheFoldSection
         id="clients-outcomes"
-        tone="light"
-        logosTitle={isEs ? "Nuestros Clientes" : "Our Clients"}
-        logos={["Cubekit", "Acme Corp", "Alt+Shift", "ContrastAI", "Eightball", "CoreOS", "Command+R", "ennLabs"]}
-        titleLineOne={isEs ? "Sitios web diseñados para generar" : "Websites built to generate"}
-        titleLineTwo={isEs ? "resultados reales de negocio" : "real business results"}
-        subtitle={
+        titleLineOne={isEs ? "Creamos sistemas web" : "We deliver Innovation"}
+        titleLineTwo={isEs ? "que generan ventas" : "that drives results"}
+        subtitleLineOne={
           isEs
-            ? "Diseñados para atraer clientes, convertir leads y apoyar el crecimiento en diferentes industrias y mercados."
-            : "Designed to attract clients, convert leads, and support growth across different industries and markets."
+            ? "Combinamos estrategia, diseño y tecnología para atraer mejores leads,"
+            : "We combine strategy, design, and technology to attract better leads,"
         }
-        ctaLabel={isEs ? "Solicitar propuesta" : "Request Proposal"}
-        ctaHref="#lead-form"
+        subtitleLineTwo={
+          isEs
+            ? "acelerar decisiones y generar resultados medibles para tu negocio."
+            : "accelerate decisions, and drive measurable business outcomes."
+        }
+        topCtaLabel={isEs ? "Conoce al equipo" : "Meet the Team"}
+        topCtaHref="#lead-form"
         stats={[
           {
             value: "95%",
-            label: isEs ? "Clientes satisfechos con el proceso y resultados" : "Clients satisfied with process and results",
+            lineOne: isEs ? "Satisfacción del cliente" : "Customer satisfaction",
+            lineTwo: isEs ? "basada en confianza y resultados" : "built on trust and results",
           },
           {
             value: "15+",
-            label: isEs ? "Industrias atendidas con sitios orientados a conversión" : "Industries served with conversion-focused websites",
+            lineOne: isEs ? "Industrias impulsadas" : "Industries empowered",
+            lineTwo: isEs ? "con soluciones a la medida" : "with tailored solutions",
           },
-          { value: "$25M+", label: isEs ? "Ingresos impactados por estrategia digital" : "Revenue influenced through digital strategy" },
+          {
+            value: "$25M+",
+            lineOne: isEs ? "Valor de negocio generado" : "Business value generated",
+            lineTwo: isEs ? "con estrategia digital" : "through strategic execution",
+          },
         ]}
+        secondaryTitleLineOne={isEs ? "Todo lo que necesitas" : "Everything you need"}
+        secondaryTitleLineTwo={isEs ? "para empezar hoy" : "to get started"}
+        secondarySubtitleLineOne={
+          isEs
+            ? "Simple, escalable y listo para cualquier industria."
+            : "Simple, scalable, and ready for any industry. Our platform helps you"
+        }
+        secondarySubtitleLineTwo={
+          isEs
+            ? "Lanza más rápido y crece sin fricción."
+            : "launch faster, operate smarter, and grow without barriers."
+        }
+        features={[
+          {
+            title: isEs ? "Framework flexible" : "Flexible framework",
+            lineOne:
+              isEs
+                ? "Adaptamos estructura, herramientas e integraciones a tu"
+                : "Adapt workflows, tools, and integrations to match your",
+            lineTwo: isEs ? "modelo de negocio sin complejidad innecesaria." : "business model without extra complexity.",
+          },
+          {
+            title: isEs ? "SEO listo para crecer" : "SEO-ready growth",
+            lineOne:
+              isEs
+                ? "Estructura técnica optimizada para posicionarte y atraer"
+                : "Technical structure optimized to rank and attract",
+            lineTwo: isEs ? "tráfico con intención de compra." : "high-intent organic traffic.",
+          },
+          {
+            title: isEs ? "Integraciones inteligentes" : "Smart integrations",
+            lineOne:
+              isEs
+                ? "Conecta formularios, CRM y automatizaciones para operar"
+                : "Connect forms, CRM, and automations to run",
+            lineTwo: isEs ? "más rápido con menos tareas manuales." : "faster with less manual effort.",
+          },
+          {
+            title: isEs ? "Diseño adaptable" : "Adaptive design",
+            lineOne:
+              isEs
+                ? "Experiencia visual consistente en desktop, tablet y"
+                : "Consistent visual experience across desktop, tablet, and",
+            lineTwo: isEs ? "mobile para mejorar confianza y respuesta." : "mobile to improve trust and action.",
+          },
+          {
+            title: isEs ? "Gestión simple" : "Simple management",
+            lineOne:
+              isEs
+                ? "Actualiza contenido y secciones clave sin depender de"
+                : "Update key content and sections without depending on",
+            lineTwo: isEs ? "procesos técnicos complejos." : "complex technical workflows.",
+          },
+          {
+            title: isEs ? "Rendimiento optimizado" : "Optimized performance",
+            lineOne:
+              isEs
+                ? "Carga rápida y arquitectura limpia para reducir rebote"
+                : "Fast loading and clean architecture to reduce bounce",
+            lineTwo: isEs ? "y aumentar conversiones." : "and increase conversion rates.",
+          },
+          {
+            title: isEs ? "Experiencia mobile first" : "Mobile-first experience",
+            lineOne:
+              isEs
+                ? "Diseñado para usuarios móviles donde ocurre la mayor"
+                : "Designed for mobile users where most discovery and",
+            lineTwo: isEs ? "parte de la captación de clientes." : "lead capture actually happens.",
+          },
+        ]}
+        activeDot={0}
+        showBottomCta={false}
       />
 
-      <KeyFeatureGridSection
-        id="industries"
-        eyebrow={isEs ? "Industrias" : "Industries"}
-        titleLineOne={isEs ? "Diseñado para la forma en que" : "Built for the way your"}
-        titleLineTwo={isEs ? "realmente funciona tu negocio" : "business actually works"}
-        subtitle={
+      <FeaturedBlackSection
+        id="ai-acceleration"
+        titleLineOne={isEs ? "IA que acelera entregas" : "AI that speeds delivery"}
+        titleLineTwo={isEs ? "y mejora resultados" : "and lifts results"}
+        descriptionLines={
           isEs
-            ? "Cada industria requiere estrategias diferentes. Diseñamos sitios según cómo opera tu negocio y cómo tus clientes toman decisiones."
-            : "Different industries require different strategies. We design websites based on how your business operates and how your customers make decisions."
+            ? [
+                "Usamos IA para entregar proyectos en menos tiempo,",
+                "con SEO y performance optimizados desde el inicio,",
+                "y un enfoque pionero con ventaja real.",
+              ]
+            : [
+                "We use AI to deliver projects in less time,",
+                "with SEO and performance optimized from day one,",
+                "and a pioneering approach built for advantage.",
+              ]
         }
-        ctaLabel={isEs ? "Explorar industrias" : "Explore Industries"}
-        ctaHref="#industries"
-        items={[
-          { icon: "real_estate", title: isEs ? "Real Estate & Inmobiliarias" : "Real Estate", description: "", href: "#lead-form", ctaLabel: isEs ? "Ver enfoque" : "See focus" },
-          { icon: "villas", title: isEs ? "Hoteles & Villas" : "Hotels & Villas", description: "", href: "#lead-form", ctaLabel: isEs ? "Ver enfoque" : "See focus" },
-          { icon: "restaurants", title: isEs ? "Restaurantes & Bares" : "Restaurants & Bars", description: "", href: "#lead-form", ctaLabel: isEs ? "Ver enfoque" : "See focus" },
-          { icon: "tours", title: isEs ? "Tours & Excursiones" : "Tours & Excursions", description: "", href: "#lead-form", ctaLabel: isEs ? "Ver enfoque" : "See focus" },
-          { icon: "wellness", title: isEs ? "Spas & Wellness" : "Spas & Wellness", description: "", href: "#lead-form", ctaLabel: isEs ? "Ver enfoque" : "See focus" },
-          { icon: "clinics", title: isEs ? "Clínicas & Salud" : "Clinics & Health", description: "", href: "#lead-form", ctaLabel: isEs ? "Ver enfoque" : "See focus" },
-          { icon: "lawyers", title: isEs ? "Abogados & Servicios Premium" : "Lawyers & Premium Services", description: "", href: "#lead-form", ctaLabel: isEs ? "Ver enfoque" : "See focus" },
-          { icon: "construction", title: isEs ? "Constructoras & Desarrollos" : "Construction & Developments", description: "", href: "#lead-form", ctaLabel: isEs ? "Ver enfoque" : "See focus" },
-          { icon: "tourism", title: isEs ? "Negocios turísticos" : "Tourism Businesses", description: "", href: "#lead-form", ctaLabel: isEs ? "Ver enfoque" : "See focus" },
+        features={[
+          {
+            icon: "collaboration",
+            lineOne: isEs ? "IA aplicada en" : "AI applied across",
+            lineTwo: isEs ? "estrategia y ejecución" : "strategy and execution",
+          },
+          {
+            icon: "layout",
+            lineOne: isEs ? "Flujos más rápidos" : "Faster workflows",
+            lineTwo: isEs ? "con menos fricción" : "with less friction",
+          },
+          {
+            icon: "speed",
+            lineOne: isEs ? "SEO técnico + performance" : "Technical SEO + performance",
+            lineTwo: isEs ? "listos desde el día uno" : "ready from day one",
+          },
+          {
+            icon: "integration",
+            lineOne: isEs ? "Pioneros en integrar IA" : "Pioneers in AI integration",
+            lineTwo: isEs ? "en entregas de alto nivel" : "for high-level delivery",
+          },
         ]}
+        featureImage="https://www.figma.com/api/mcp/asset/ca337080-94cb-422c-8be2-e4bb50ec6c44"
+        stats={[
+          {
+            value: "4x",
+            lineOne: isEs ? "Entrega más rápida" : "Faster delivery",
+            lineTwo: isEs ? "que lo tradicional" : "than traditional flow",
+          },
+          {
+            value: "90+",
+            lineOne: isEs ? "Base técnica en" : "Technical score in",
+            lineTwo: isEs ? "SEO y performance" : "SEO and performance",
+          },
+          {
+            value: "1st",
+            lineOne: isEs ? "Enfoque pionero" : "Pioneer approach",
+            lineTwo: isEs ? "en IA aplicada" : "in applied AI",
+          },
+        ]}
+        quotePrimary={
+          isEs
+            ? "“La IA acelera la entrega,"
+            : "“AI speeds up delivery,"
+        }
+        quoteSecondaryLineOne={
+          isEs
+            ? "pero la diferencia es criterio."
+            : "but judgment stays central."
+        }
+        quoteSecondaryLineTwo={
+          isEs
+            ? "Más velocidad, mejor SEO y performance,"
+            : "More speed, better SEO and performance,"
+        }
+        quoteSecondaryLineThree={
+          isEs
+            ? "con ejecución de alto nivel.”"
+            : "with high-level execution.”"
+        }
       />
 
       <HoverRevealServicesSection
@@ -322,52 +431,6 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
         ]}
       />
 
-      <Section2MissionSplit
-        id="benefits"
-        titleLineOne={isEs ? "Tu sitio web debe funcionar" : "Your website should work"}
-        titleLineTwo={isEs ? "como una herramienta de negocio" : "like a business tool"}
-        subtitle={
-          isEs
-            ? "Construido para mejorar conversión, confianza y desempeño comercial desde la primera visita."
-            : "Built to improve conversion, trust, and business performance from the first visit."
-        }
-        missionLabel={isEs ? "Beneficios" : "Benefits"}
-        ctaLabel={isEs ? "Solicitar propuesta" : "Request Proposal"}
-        ctaHref="#lead-form"
-        stats={[
-          { icon: "satisfaction", value: "95%", label: isEs ? "Clientes satisfechos con proceso y resultados" : "Clients satisfied with process and results" },
-          { icon: "industries", value: "15+", label: isEs ? "Industrias atendidas con enfoque en conversión" : "Industries served with conversion-focused websites" },
-          { icon: "value", value: "$25M+", label: isEs ? "Ingresos impactados por estrategia digital" : "Revenue influenced through digital strategy" },
-        ]}
-        image="https://www.figma.com/api/mcp/asset/ca337080-94cb-422c-8be2-e4bb50ec6c44"
-        tickerItems={[
-          { avatar: "https://www.figma.com/api/mcp/asset/5840bd1f-3900-4cf9-8cc1-c31c11de32b3", text: isEs ? "Conversión" : "Conversion" },
-          { avatar: "https://www.figma.com/api/mcp/asset/c403a76f-7cd6-41d4-ac60-c371e5ebc420", text: isEs ? "Confianza" : "Trust", muted: true },
-          { avatar: "https://www.figma.com/api/mcp/asset/b860798b-cdc4-44be-8353-3cddd5130012", text: isEs ? "Leads" : "Leads" },
-        ]}
-      />
-
-      <FeaturedSectionImageLeft
-        id="benefits-split"
-        titleLineOne={isEs ? "Tu sitio web debe funcionar" : "Your website should work"}
-        titleLineTwo={isEs ? "como activo comercial" : "as a business asset"}
-        eyebrow={isEs ? "Beneficios clave" : "Key benefits"}
-        ctaLabel={isEs ? "Solicitar propuesta" : "Request Proposal"}
-        ctaHref="#lead-form"
-        paragraphOne={
-          isEs
-            ? "Convierte visitas en clientes reales · Construye confianza desde la primera impresión · Mejora tu presencia online."
-            : "Turn visitors into real clients · Build trust from the first impression · Improve your online presence."
-        }
-        paragraphTwo={
-          isEs
-            ? "Captura leads de forma eficiente · Optimizado para móvil y velocidad · Integración directa con WhatsApp."
-            : "Capture leads efficiently · Optimized for mobile and speed · Direct WhatsApp integration."
-        }
-        backgroundImage="https://www.figma.com/api/mcp/asset/1a8b8817-5608-4c8f-9bc3-5fe1c28f39e1"
-        featureImage="https://www.figma.com/api/mcp/asset/ca337080-94cb-422c-8be2-e4bb50ec6c44"
-      />
-
       <ClientVoicesCarouselSection
         id="testimonials"
         title={isEs ? "Lo que dicen nuestros clientes" : "What our clients say"}
@@ -404,6 +467,7 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
 
       <ProcessSection
         id="process"
+        tone="light"
         eyebrow={isEs ? "Proceso" : "Process"}
         title={isEs ? "Un proceso transparente diseñado para resultados" : "A transparent process designed for business outcomes"}
         subtitle={
@@ -435,31 +499,34 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
         ]}
         ctaHref="#lead-form"
         ctaLabel={isEs ? "Solicitar propuesta" : "Request Proposal"}
-        whatsappLabel={isEs ? "Conversar por WhatsApp" : "Chat on WhatsApp"}
+        whatsappLabel={isEs ? "Hablemos por WhatsApp" : "Hablemos por WhatsApp"}
       />
 
       <PricingSection
         id="plans-preview"
-        title={isEs ? "Planes mensuales con precios transparentes" : "Monthly plans with transparent pricing"}
-        subtitle={
-          isEs
-            ? "Elige Essential, Business o Ecommerce según la etapa de tu negocio y tus metas de leads."
-            : "Choose Essential, Business, or Ecommerce based on your business stage and lead goals."
-        }
+        title="Planes claros, sin sorpresas"
+        subtitle="Elige el plan que mejor se adapta a la etapa y necesidades de tu negocio."
         plans={pricingPlansByLocale[locale]}
         proposalHref="#lead-form"
-        whatsappLabel={isEs ? "Conversar por WhatsApp" : "Chat on WhatsApp"}
-        helpText={isEs ? "¿Necesitas ayuda para elegir el plan correcto?" : "Need help choosing the right plan?"}
-        helpCtaText={isEs ? "Solicitar cotización gratuita" : "Request Free Quote for your business"}
+        cardButtonLabel="Solicitar servicio"
+        showSecondaryWhatsAppButton={false}
+        whatsappLabel={isEs ? "Hablemos por WhatsApp" : "Hablemos por WhatsApp"}
+        helpText=""
+        helpCtaText=""
         helpCtaHref="#plans-preview"
       />
 
       <TestimonialBannerSection
         id="banner-cta"
-        quote="The team brought clarity to our vision and delivered beyond expectations. A seamless blend of strategy, execution, and ongoing support."
+        sectionTone="light"
+        quote={
+          isEs
+            ? "El equipo le dio claridad a nuestra visión y entregó más allá de lo esperado. Una combinación impecable de estrategia, ejecución y soporte continuo."
+            : "The team brought clarity to our vision and delivered beyond expectations. A seamless blend of strategy, execution, and ongoing support."
+        }
         author="Emma Johnson"
-        role="CEO & Co-Founder of Roundsite"
-        reviewsText="4.6 Rate by 16,000+ Reviews"
+        role={isEs ? "CEO y cofundadora de Roundsite" : "CEO & Co-Founder of Roundsite"}
+        reviewsText={isEs ? "4.6 de calificación en 16,000+ reseñas" : "4.6 Rate by 16,000+ Reviews"}
         bgImage="https://www.figma.com/api/mcp/asset/4f3985a6-d756-48a4-8db6-cd3dba920c9f"
       />
 
@@ -487,12 +554,12 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
         }
         proposalHref="#lead-form"
         quoteHref="#lead-form"
-        whatsappLabel={isEs ? "Conversar por WhatsApp" : "Chat on WhatsApp"}
+        whatsappLabel={isEs ? "Hablemos por WhatsApp" : "Hablemos por WhatsApp"}
       />
 
       <HomeV3Footer
         homeHref="#hero"
-        whatsappLabel={isEs ? "Conversar con un agente vía WhatsApp" : "Chat on WhatsApp"}
+        whatsappLabel={isEs ? "Hablemos por WhatsApp" : "Hablemos por WhatsApp"}
         locale={locale}
         serviceLinks={[
           { label: isEs ? "Diseño web" : "Web Design", href: "/services/diseno-web" },

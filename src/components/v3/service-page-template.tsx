@@ -51,7 +51,7 @@ export function ServicePageTemplate({ content }: { content: ServicePageContent }
         subtitle={content.process.subtitle}
         ctaHref="#lead-form"
         ctaLabel="Solicitar propuesta"
-        whatsappLabel="Conversar con un agente vía WhatsApp"
+        whatsappLabel="Hablemos por WhatsApp"
         whatsappMessage={content.process.whatsappMessage}
         items={content.process.items}
       />
@@ -116,7 +116,7 @@ export function ServicePageTemplate({ content }: { content: ServicePageContent }
         quoteHref="#lead-form"
         showProposalCta={false}
         proposalHref="#lead-form"
-        whatsappLabel="Conversar con un agente vía WhatsApp"
+        whatsappLabel="Hablemos por WhatsApp"
         whatsappMessage={content.lead.whatsappMessage}
         formSubmitLabel="Solicitar cotización gratis"
         formShowWhatsAppLink={false}
@@ -127,7 +127,7 @@ export function ServicePageTemplate({ content }: { content: ServicePageContent }
         homeHref="/"
         locale="es"
         description={content.footerDescription}
-        whatsappLabel="Conversar con un agente vía WhatsApp"
+        whatsappLabel="Hablemos por WhatsApp"
       />
     </>
   );

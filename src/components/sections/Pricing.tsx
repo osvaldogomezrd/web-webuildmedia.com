@@ -284,7 +284,7 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="section-padding bg-zinc-950 relative overflow-hidden"
+      className="section-padding relative overflow-hidden bg-[#070707]"
       aria-labelledby="pricing-heading"
     >
       {/* Background glow */}
@@ -295,16 +295,16 @@ export function Pricing() {
 
       <Container>
         {/* Header */}
-        <div className="text-center mb-16 flex flex-col items-center gap-4">
-          <SectionLabel>Pricing</SectionLabel>
+        <div className="mb-16 flex flex-col items-center gap-4 text-center">
+          <SectionLabel className="border-white/15 bg-white/10 text-white/80">Pricing</SectionLabel>
           <h2
             id="pricing-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight text-balance"
+            className="text-[28px] leading-[44px] tracking-[-1.6px] font-medium text-white md:text-[48px] md:leading-[70px] md:tracking-[-2.6px]"
           >
-            Simple pricing.{" "}
-            <span className="gradient-text">Powerful results.</span>
+            <span className="block">Simple pricing.</span>
+            <span className="block">Powerful results.</span>
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl text-balance">
+          <p className="max-w-2xl text-base leading-[22.4px] text-white/80">
             We build websites that help Punta Cana businesses get more
             clients — not just a pretty page, but a tool that works for you
             every day.

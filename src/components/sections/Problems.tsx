@@ -37,22 +37,16 @@ const problems = [
 
 export function Problems() {
   return (
-    <section className="section-padding bg-zinc-900/50 relative overflow-hidden">
-      {/* Background accent */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-red-500/3 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
-
+    <section className="section-padding relative overflow-hidden bg-[#f6f6f6]">
       <Container>
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center gap-4">
           <SectionLabel>Sound familiar?</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight text-balance">
-            Problems we solve for{" "}
-            <span className="gradient-text">local businesses</span>
+          <h2 className="below-hero-title text-center">
+            <span className="block">Problems we solve for</span>
+            <span className="block">local businesses</span>
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl text-balance">
+          <p className="max-w-2xl text-base leading-[22.4px] text-[#3d3d3d]">
             These are the most common issues we fix for businesses in Punta
             Cana. If any of these sound familiar, we should talk.
           </p>
@@ -63,29 +57,31 @@ export function Problems() {
           {problems.map((item, index) => (
             <div
               key={index}
-              className="group rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 hover:border-zinc-700 transition-all duration-300"
+              className="group rounded-[4px] border border-black/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
             >
               <div className="grid sm:grid-cols-[1fr_auto] gap-4 sm:gap-8 items-start">
                 <div className="space-y-2">
                   <div className="flex items-start gap-3">
                     <XCircle
                       size={18}
-                      className="text-red-400 shrink-0 mt-0.5"
+                      className="shrink-0 mt-0.5 text-[#f74c3c]"
                       aria-hidden="true"
                     />
-                    <h3 className="font-bold text-white">{item.problem}</h3>
+                    <h3 className="text-[20px] leading-[28px] tracking-[-0.4px] font-medium text-[#1e1e1e]">
+                      {item.problem}
+                    </h3>
                   </div>
-                  <p className="text-sm text-zinc-500 leading-relaxed pl-7">
+                  <p className="pl-7 text-base leading-[22.4px] text-[#3d3d3d]">
                     {item.consequence}
                   </p>
                 </div>
-                <div className="flex items-start gap-2 sm:max-w-[260px] bg-zinc-800/60 rounded-xl p-3 border border-zinc-700/40">
+                <div className="flex items-start gap-2 rounded-[4px] border border-black/10 bg-[#f6f6f6] p-4 sm:max-w-[280px]">
                   <CheckCircle2
                     size={16}
-                    className="text-amber-400 shrink-0 mt-0.5"
+                    className="shrink-0 mt-0.5 text-[#413df2]"
                     aria-hidden="true"
                   />
-                  <p className="text-xs text-zinc-300 leading-relaxed">
+                  <p className="text-sm leading-[20px] text-[#1e1e1e]">
                     {item.fix}
                   </p>
                 </div>
