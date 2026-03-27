@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Send, CheckCircle2, Loader2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +15,7 @@ const schema = z.object({
   email: z.string().email("Please enter a valid email"),
   whatsapp: z.string().min(7, "Please enter your WhatsApp number"),
   projectType: z.string().min(1, "Please select a project type"),
+  estimatedBudget: z.string().min(1, "Please select an estimated budget"),
   message: z.string().optional(),
 });
 
@@ -34,6 +34,15 @@ const projectTypes = [
   "Other",
 ];
 
+const estimatedBudgets = [
+  "Under $1,000",
+  "$1,000 - $2,500",
+  "$2,500 - $5,000",
+  "$5,000 - $10,000",
+  "$10,000+",
+  "Not sure yet",
+];
+
 interface FieldProps {
   label: string;
   error?: string;
@@ -46,7 +55,7 @@ function Field({ label, error, required, children }: FieldProps) {
     <div className="flex flex-col gap-1.5">
       <label className="text-sm font-medium text-zinc-300">
         {label}
-        {required && <span className="text-amber-400 ml-1">*</span>}
+        {required && <span className="ml-1 text-[#413df2]">*</span>}
       </label>
       {children}
       {error && (
@@ -57,7 +66,7 @@ function Field({ label, error, required, children }: FieldProps) {
 }
 
 const inputClass =
-  "w-full rounded-xl border border-zinc-700/60 bg-zinc-800/60 px-4 py-3 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/40 transition-colors duration-200";
+  "w-full rounded-xl border border-zinc-700/60 bg-zinc-800/60 px-4 py-3 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#413df2]/70 focus:ring-1 focus:ring-[#413df2]/35 transition-colors duration-200";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -101,22 +110,21 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-zinc-950 relative overflow-hidden">
+    <section id="contact" className="section-padding relative overflow-hidden bg-[#070707]">
       <div
-        className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/4 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-[#413df2]/10 blur-3xl pointer-events-none"
         aria-hidden="true"
       />
 
-      <Container size="lg">
+      <Container size="xl">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left: copy */}
           <div className="flex flex-col gap-6 lg:pt-4">
-            <SectionLabel>Get in touch</SectionLabel>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
-              Tell us about{" "}
-              <span className="gradient-text">your business</span>
+            <h2 className="text-[28px] leading-[44px] tracking-[-1.6px] font-medium text-white md:text-[48px] md:leading-[70px] md:tracking-[-2.6px]">
+              <span className="block">Tell us about</span>
+              <span className="block">your business</span>
             </h2>
-            <p className="text-zinc-400 leading-relaxed">
+            <p className="text-base leading-[22.4px] text-white/80">
               Fill out the form and we&apos;ll review your project. You&apos;ll
               receive a clear, personalized proposal within 24 hours — no vague
               quotes, no pressure.
@@ -131,8 +139,8 @@ export function ContactForm() {
                 "Response within 24 business hours",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-amber-500/15 border border-amber-500/30 flex items-center justify-center shrink-0">
-                    <span className="text-amber-400 text-[10px] font-bold">✓</span>
+                  <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#413df2]/35 bg-[#413df2]/15">
+                    <span className="text-[10px] font-bold text-[#413df2]">✓</span>
                   </div>
                   <span className="text-sm text-zinc-300">{item}</span>
                 </div>
@@ -149,14 +157,14 @@ export function ContactForm() {
                   href="https://wa.me/18491234567"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-zinc-300 hover:text-amber-400 transition-colors"
+                  className="flex items-center gap-2 text-sm text-zinc-300 transition-colors hover:text-[#413df2]"
                 >
                   <span aria-hidden="true">📱</span>
                   WhatsApp: +1 (849) 123-4567
                 </a>
                 <a
                   href="mailto:hello@webuildmedia.com"
-                  className="flex items-center gap-2 text-sm text-zinc-300 hover:text-amber-400 transition-colors"
+                  className="flex items-center gap-2 text-sm text-zinc-300 transition-colors hover:text-[#413df2]"
                 >
                   <span aria-hidden="true">✉️</span>
                   hello@webuildmedia.com
@@ -236,26 +244,53 @@ export function ContactForm() {
                   </Field>
                 </div>
 
-                <Field label="Type of project" error={errors.projectType?.message} required>
-                  <select
-                    {...register("projectType")}
-                    className={cn(
-                      inputClass,
-                      "appearance-none cursor-pointer",
-                      errors.projectType && "border-red-500/60"
-                    )}
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Select a project type
-                    </option>
-                    {projectTypes.map((type) => (
-                      <option key={type} value={type} className="bg-zinc-800">
-                        {type}
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <Field label="Type of project" error={errors.projectType?.message} required>
+                    <select
+                      {...register("projectType")}
+                      className={cn(
+                        inputClass,
+                        "appearance-none cursor-pointer",
+                        errors.projectType && "border-red-500/60"
+                      )}
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
+                        Select a project type
                       </option>
-                    ))}
-                  </select>
-                </Field>
+                      {projectTypes.map((type) => (
+                        <option key={type} value={type} className="bg-zinc-800">
+                          {type}
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
+
+                  <Field
+                    label="Estimated budget"
+                    error={errors.estimatedBudget?.message}
+                    required
+                  >
+                    <select
+                      {...register("estimatedBudget")}
+                      className={cn(
+                        inputClass,
+                        "appearance-none cursor-pointer",
+                        errors.estimatedBudget && "border-red-500/60"
+                      )}
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
+                        Select your budget
+                      </option>
+                      {estimatedBudgets.map((budget) => (
+                        <option key={budget} value={budget} className="bg-zinc-800">
+                          {budget}
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
+                </div>
 
                 <Field label="Tell us more (optional)">
                   <textarea
@@ -276,7 +311,7 @@ export function ContactForm() {
                   type="submit"
                   variant="primary"
                   size="lg"
-                  className="w-full"
+                  className="w-full !bg-[#413df2] hover:!bg-[#2f2bcf] focus-visible:!ring-[#413df2] !shadow-[#413df2]/30"
                   disabled={status === "loading"}
                 >
                   {status === "loading" ? (

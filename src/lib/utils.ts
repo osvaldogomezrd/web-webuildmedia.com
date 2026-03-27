@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const WHATSAPP_NUMBER =
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "18491234567";
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "18294822222";
 
 export const WHATSAPP_DEFAULT_MESSAGE = encodeURIComponent(
   "Hi! I found you through your website and I'd like to learn more about your web design services."

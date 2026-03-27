@@ -135,7 +135,7 @@ export function IndustryPageTemplate({
             titleLineOne={heroTitleOne}
             titleLineTwo={heroTitleTwo}
             subtitle={heroSubtitle}
-            primaryLabel="Escríbeme por WhatsApp"
+            primaryLabel="Hablemos por WhatsApp"
             primaryHref={getWhatsAppUrl(content.hero.whatsappMessage)}
             secondaryLabel="Ver precios"
             secondaryHref="#precios"
@@ -151,7 +151,7 @@ export function IndustryPageTemplate({
             titleLineOne={heroTitleOne}
             titleLineTwo={heroTitleTwo}
             subtitle={heroSubtitle}
-            primaryLabel="Escríbeme por WhatsApp"
+            primaryLabel="Hablemos por WhatsApp"
             primaryHref={getWhatsAppUrl(content.hero.whatsappMessage)}
             secondaryLabel="Ver precios"
             secondaryHref="#precios"
@@ -241,7 +241,7 @@ export function IndustryPageTemplate({
         showStars={false}
         showReviews={false}
         showQuoteMarks={false}
-        primaryCtaLabel="Escríbeme por WhatsApp - respondo hoy"
+        primaryCtaLabel="Hablemos por WhatsApp"
         primaryCtaHref={getWhatsAppUrl(content.banner.whatsappMessage)}
         secondaryCtaLabel="Enviar por formulario"
         secondaryCtaHref="#lead-form"
@@ -252,7 +252,7 @@ export function IndustryPageTemplate({
         titleLineOne="Todo lo que necesitas"
         titleLineTwo="saber antes de empezar"
         subtitle={content.faq.subtitle}
-        ctaLabel="Preguntar por WhatsApp"
+        ctaLabel="Hablemos por WhatsApp"
         ctaHref={getWhatsAppUrl(content.faq.askWhatsappMessage)}
         items={content.faq.items}
       />
@@ -264,7 +264,7 @@ export function IndustryPageTemplate({
             No hay pregunta tonta. Escríbela y te la respondemos personalmente, por formulario o directo al WhatsApp.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <PrimaryCta href={getWhatsAppUrl(content.faq.followupWhatsappMessage)}>Preguntar por WhatsApp</PrimaryCta>
+            <PrimaryCta href={getWhatsAppUrl(content.faq.followupWhatsappMessage)}>Hablemos por WhatsApp</PrimaryCta>
             <SecondaryCta href="#lead-form">Enviar por formulario</SecondaryCta>
           </div>
         </div>
@@ -277,7 +277,7 @@ export function IndustryPageTemplate({
         eyebrow=""
         showPrimaryCta={false}
         showProposalCta={false}
-        whatsappLabel="Escríbeme directo por WhatsApp"
+        whatsappLabel="Hablemos por WhatsApp"
         whatsappMessage={content.form.whatsappMessage}
         formSubmitLabel="Enviar mensaje"
         formShowWhatsAppLink={false}

@@ -46,21 +46,16 @@ const metrics = [
 
 export function Testimonials() {
   return (
-    <section className="section-padding bg-zinc-950 relative overflow-hidden">
-      <div
-        className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-amber-500/4 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
-
+    <section className="section-padding relative overflow-hidden bg-white">
       <Container>
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center gap-4">
           <SectionLabel>Client results</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight text-balance">
-            Real businesses,{" "}
-            <span className="gradient-text">real results</span>
+          <h2 className="below-hero-title text-center">
+            <span className="block">Real businesses,</span>
+            <span className="block">real results</span>
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl text-balance">
+          <p className="max-w-2xl text-base leading-[22.4px] text-[#3d3d3d]">
             Don&apos;t take our word for it. Here&apos;s what our clients say
             after working with us.
           </p>
@@ -71,29 +66,21 @@ export function Testimonials() {
           {testimonials.map((t) => (
             <figure
               key={t.author}
-              className="card-dark card-hover p-6 flex flex-col gap-5"
+              className="flex flex-col gap-5 rounded-[4px] border border-black/10 bg-[#f6f6f6] p-6 shadow-sm"
             >
-              <Quote
-                size={28}
-                className="text-amber-500/40"
-                aria-hidden="true"
-              />
-              <blockquote className="text-sm text-zinc-300 leading-relaxed flex-1">
+              <Quote size={28} className="text-[#413df2]/40" aria-hidden="true" />
+              <blockquote className="flex-1 text-base leading-[22.4px] text-[#3d3d3d]">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
-              <figcaption className="flex items-center gap-3 border-t border-zinc-800 pt-4">
+              <figcaption className="flex items-center gap-3 border-t border-black/10 pt-4">
                 <div
                   className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center shrink-0`}
                 >
-                  <span className="text-white font-bold text-xs">
-                    {t.initials}
-                  </span>
+                  <span className="text-white font-bold text-xs">{t.initials}</span>
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-white">
-                    {t.author}
-                  </div>
-                  <div className="text-xs text-zinc-500">{t.role}</div>
+                  <div className="text-base font-medium text-[#1e1e1e]">{t.author}</div>
+                  <div className="text-sm text-[#3d3d3d]">{t.role}</div>
                 </div>
               </figcaption>
             </figure>
@@ -105,13 +92,13 @@ export function Testimonials() {
           {metrics.map((metric) => (
             <div
               key={metric.label}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 text-center"
+              className="rounded-[4px] border border-black/10 bg-[#f6f6f6] p-6 text-center shadow-sm"
             >
-              <div className="text-3xl sm:text-4xl font-black text-white">
+              <div className="text-3xl font-medium text-[#1e1e1e] sm:text-4xl">
                 {metric.value}
-                <span className="text-amber-400">{metric.suffix}</span>
+                <span className="text-[#413df2]">{metric.suffix}</span>
               </div>
-              <div className="text-xs text-zinc-500 mt-2 font-medium uppercase tracking-wider">
+              <div className="mt-2 text-xs font-medium uppercase tracking-wider text-[#3d3d3d]">
                 {metric.label}
               </div>
             </div>

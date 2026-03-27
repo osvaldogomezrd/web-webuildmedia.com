@@ -1,215 +1,100 @@
-import { ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/utils";
 
-const trustBadges = [
-  "Conversion-focused design",
-  "Mobile-first build",
-  "Local SEO ready",
+const heroBg =
+  "https://www.figma.com/api/mcp/asset/1f165956-d470-43bd-93fb-2d62c7066234";
+
+const avatars = [
+  { initials: "CM", bg: "#f59e0b" },
+  { initials: "AR", bg: "#06b6d4" },
+  { initials: "JP", bg: "#8b5cf6" },
+  { initials: "VS", bg: "#f43f5e" },
 ];
 
 export function Hero() {
   return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden bg-zinc-950 pt-20"
-      aria-label="Hero"
-    >
-      {/* Background glow effects */}
+    <section className="hero-max-h relative overflow-hidden border-b border-white/30" aria-label="Hero">
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-600/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(47deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%)",
+        }}
         aria-hidden="true"
       />
-
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none"
-        aria-hidden="true"
-      />
-
-      <Container className="relative z-10 py-20 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Copy */}
-          <div className="flex flex-col gap-8">
-            {/* Tag */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 w-fit">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">
-                Web Design Agency · Punta Cana
+      <div className="relative w-full px-6 pb-[206px] pt-[206px] md:px-10 lg:px-16">
+        <div className="flex w-full max-w-[760px] flex-col gap-20 max-md:gap-12">
+          <div className="flex flex-col items-start gap-8">
+            <div className="inline-flex items-center gap-2 text-white/70">
+              <span className="inline-flex size-5 items-center justify-center rounded-full bg-[#413df2]">
+                <Sparkles size={11} className="text-white" />
+              </span>
+              <span className="text-base font-medium leading-[22.4px]">
+                Strategic websites built for Punta Cana businesses
               </span>
             </div>
 
-            {/* Headline */}
-            <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight text-white text-balance">
-                Websites that turn{" "}
-                <span className="relative inline-block">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-500">
-                    visits into clients
-                  </span>
-                  <span
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full"
-                    aria-hidden="true"
-                  />
-                </span>{" "}
-                — for businesses in Punta Cana.
-              </h1>
-            </div>
+            <h1 className="site-hero-title hero-title-clamp font-medium leading-[1.1] tracking-[-0.04em] text-white md:leading-[88px]">
+              Websites that turn
+              <br />
+              visits into clients
+            </h1>
 
-            {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-zinc-400 leading-relaxed max-w-xl">
+            <p className="hero-copy-clamp max-w-[500px] text-[20px] leading-7 tracking-[-0.4px] text-white/70 max-md:text-[18px] max-md:leading-[26px]">
               We build strategic websites for real estate, tourism, restaurants,
-              and premium businesses in Punta Cana. Not just beautiful — built
-              to sell, generate leads, and grow your business.
+              and premium businesses in Punta Cana. Built to sell, generate leads,
+              and grow your business.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button variant="primary" size="lg" href="#contact">
+            <div className="flex flex-wrap items-center gap-8">
+              <a
+                href="#contact"
+                className="inline-flex h-[46px] items-center justify-center gap-3 rounded-[4px] bg-[#413df2] px-6 text-base font-medium text-white transition-opacity duration-200 hover:opacity-90"
+              >
                 Request a Proposal
-                <ArrowRight size={20} />
-              </Button>
-              <Button
-                variant="secondary"
-                size="lg"
-                href={getWhatsAppUrl(
-                  "Hi! I want to get a proposal for my business website."
-                )}
+                <ArrowRight size={16} strokeWidth={2.5} />
+              </a>
+              <a
+                href={getWhatsAppUrl("Hi! I want to get a proposal for my business website.")}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-flex items-center text-base font-medium leading-[22.4px] text-white transition-opacity duration-200 hover:opacity-80"
               >
-                <MessageCircle size={20} />
-                Write on WhatsApp
-              </Button>
+                Hablemos por WhatsApp
+              </a>
             </div>
-
-            {/* Trust badges */}
-            <ul className="flex flex-wrap gap-x-6 gap-y-2">
-              {trustBadges.map((badge) => (
-                <li key={badge} className="flex items-center gap-2 text-sm text-zinc-400">
-                  <CheckCircle2 size={14} className="text-amber-400 shrink-0" />
-                  {badge}
-                </li>
-              ))}
-            </ul>
           </div>
 
-          {/* Right: Visual mockup */}
-          <div className="relative flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-lg">
-              {/* Outer glow */}
-              <div
-                className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/20 to-transparent blur-2xl"
-                aria-hidden="true"
-              />
-
-              {/* Browser mockup */}
-              <div className="relative rounded-2xl border border-zinc-700/60 bg-zinc-900 shadow-2xl overflow-hidden">
-                {/* Browser chrome */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-zinc-800/80 border-b border-zinc-700/60">
-                  <div className="flex gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-zinc-600" />
-                    <div className="w-3 h-3 rounded-full bg-zinc-600" />
-                    <div className="w-3 h-3 rounded-full bg-zinc-600" />
-                  </div>
-                  <div className="flex-1 mx-3 h-5 rounded bg-zinc-700/60 flex items-center px-3">
-                    <span className="text-[10px] text-zinc-400 font-mono">
-                      yourbusiness.com
-                    </span>
-                  </div>
+          <div className="flex flex-wrap items-center gap-[18px]">
+            <div className="flex items-start pr-[14px]">
+              {avatars.map((avatar, i) => (
+                <div
+                  key={avatar.initials}
+                  className="-mr-[14px] flex size-[54px] shrink-0 items-center justify-center rounded-full border-4 border-black/95 text-sm font-semibold text-white"
+                  style={{ backgroundColor: avatar.bg, zIndex: avatars.length - i }}
+                  aria-hidden="true"
+                >
+                  {avatar.initials}
                 </div>
+              ))}
+            </div>
 
-                {/* Page preview content */}
-                <div className="p-6 space-y-4 min-h-[280px]">
-                  {/* Hero area placeholder */}
-                  <div className="rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-700/40 p-5 space-y-3">
-                    <div className="h-3 w-3/4 bg-amber-500/40 rounded-full" />
-                    <div className="h-5 w-full bg-zinc-600/50 rounded-full" />
-                    <div className="h-5 w-5/6 bg-zinc-600/50 rounded-full" />
-                    <div className="h-3 w-2/3 bg-zinc-700/60 rounded-full" />
-                    <div className="flex gap-2 pt-1">
-                      <div className="h-8 w-28 rounded-lg bg-amber-500/70" />
-                      <div className="h-8 w-28 rounded-lg bg-zinc-600/50 border border-zinc-500/30" />
-                    </div>
-                  </div>
-
-                  {/* Stats row */}
-                  <div className="grid grid-cols-3 gap-3">
-                    {["+340%", "+89", "4.9★"].map((stat) => (
-                      <div
-                        key={stat}
-                        className="rounded-lg bg-zinc-800/60 border border-zinc-700/40 p-3 text-center"
-                      >
-                        <div className="text-sm font-bold text-amber-400">
-                          {stat}
-                        </div>
-                        <div className="text-[10px] text-zinc-500 mt-0.5">
-                          {stat === "+340%"
-                            ? "More leads"
-                            : stat === "+89"
-                            ? "Bookings"
-                            : "Rating"}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Content rows */}
-                  <div className="space-y-2">
-                    {[80, 65, 90].map((w, i) => (
-                      <div
-                        key={i}
-                        className="h-2.5 rounded-full bg-zinc-700/50"
-                        style={{ width: `${w}%` }}
-                      />
-                    ))}
-                  </div>
-                </div>
+            <div className="flex flex-col items-start gap-[7px]">
+              <div className="text-xl tracking-[0.2em] text-white" aria-label="5 star rating">
+                ★★★★★
               </div>
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -left-4 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-xl flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
-                  <span className="text-amber-400 text-base">📈</span>
-                </div>
-                <div>
-                  <div className="text-xs font-semibold text-white">
-                    +340% more leads
-                  </div>
-                  <div className="text-[10px] text-zinc-500">
-                    avg. client result
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating badge 2 */}
-              <div className="absolute -top-4 -right-4 bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 shadow-xl flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
-                  <span className="text-green-400 text-base">✓</span>
-                </div>
-                <div>
-                  <div className="text-xs font-semibold text-white">
-                    Mobile-first
-                  </div>
-                  <div className="text-[10px] text-zinc-500">
-                    100/100 performance
-                  </div>
-                </div>
-              </div>
+              <p className="text-base font-medium leading-[22.4px] text-white">
+                4.9 Rate by 30+ Reviews
+              </p>
             </div>
           </div>
         </div>
-      </Container>
-
-      {/* Bottom fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-zinc-950 to-transparent pointer-events-none"
-        aria-hidden="true"
-      />
+      </div>
     </section>
   );
 }

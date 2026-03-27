@@ -1,0 +1,653 @@
+import type { CoreServicePageContent } from "@/components/v3/service-core-template";
+
+const processBase = [
+  {
+    step: "Step 01",
+    title: "Strategy",
+    description: "We align your offer, audience, and conversion goals before we design anything.",
+  },
+  {
+    step: "Step 02",
+    title: "Design",
+    description: "We build trust-focused page structure that guides visitors to request proposals.",
+  },
+  {
+    step: "Step 03",
+    title: "Development",
+    description: "We implement a fast, mobile-first experience optimized for SEO and lead capture.",
+  },
+  {
+    step: "Step 04",
+    title: "Launch",
+    description: "We launch, test inquiry flows, and refine key sections to increase qualified leads.",
+  },
+];
+
+const relatedCards = [
+  {
+    image: "https://www.figma.com/api/mcp/asset/bf706c23-7980-40ad-bdde-cc07889049d7",
+    title: "Web Design",
+    description: "Custom pages that turn visits into quote requests.",
+    tags: ["Lead-focused", "Mobile-first", "Brand trust"],
+    href: "/web-design",
+  },
+  {
+    image: "https://www.figma.com/api/mcp/asset/893d0773-3792-4b30-ac20-536e15a6d304",
+    title: "Web Development",
+    description: "Fast architecture and scalable implementation for growth.",
+    tags: ["Next.js", "Technical SEO", "Performance"],
+    href: "/web-development",
+  },
+  {
+    image: "https://www.figma.com/api/mcp/asset/25e2ad1f-ac04-45b5-8c28-25e7f86ad754",
+    title: "Ecommerce Websites",
+    description: "Product pages and checkout flows designed to convert.",
+    tags: ["Store UX", "Payment flow", "Higher AOV"],
+    href: "/ecommerce-websites",
+  },
+];
+
+export const coreServicePages: Record<string, CoreServicePageContent> = {
+  "web-design": {
+    slug: "web-design",
+    metadataTitle: "Web Design Services | Conversion-Focused Websites for More Leads",
+    metadataDescription:
+      "Web design services built to help businesses generate more qualified leads, bookings, and WhatsApp inquiries.",
+    hero: {
+      h1: "Web Design Services for Businesses That Need More Leads",
+      badgeText: "Web design services",
+      titleLineOne: "Web design that",
+      titleLineTwo: "turns visitors into clients",
+      subtitle:
+        "We design websites with clear offers, strong trust signals, and conversion-first structure so your business gets more inquiries.",
+      ratingText: "Rated 4.9/5 by clients focused on growth",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/eaf9e64e-7cc6-4116-97b0-8555d3cae1c5",
+    },
+    benefitsTitle: "Why web design matters for lead generation",
+    benefitsSubtitle: "Design is not decoration. It is your first conversion system.",
+    benefitsItems: [
+      { title: "Stronger first impression", description: "Build trust in the first seconds so more users keep scrolling." },
+      { title: "Clear conversion hierarchy", description: "Guide users toward Request Proposal and Request Free Quote actions." },
+      { title: "Mobile conversion readiness", description: "Capture high-intent mobile traffic without friction." },
+      { title: "Message clarity", description: "Help buyers understand your value fast and decide faster." },
+      { title: "Higher inquiry quality", description: "Attract better-fit leads with better page framing." },
+      { title: "Scalable design system", description: "Launch future pages faster with consistent visual patterns." },
+    ],
+    audienceTitle: "Who this service is for",
+    audienceSubtitle: "Built for businesses that want qualified demand, not just traffic.",
+    audienceItems: [
+      { title: "Real estate and villas", description: "Teams that need high-trust pages to drive qualified property inquiries." },
+      { title: "Restaurants and tourism", description: "Brands that depend on bookings and WhatsApp conversations." },
+      { title: "Clinics and premium services", description: "Businesses that need authority and conversion clarity online." },
+    ],
+    processTitle: "From strategy to launch in four clear steps",
+    processSubtitle: "A process focused on conversion outcomes, not vague deliverables.",
+    processSteps: processBase,
+    deliverables: {
+      eyebrow: "What You Get",
+      titleLineOne: "Everything required to",
+      titleLineTwo: "launch a lead-generating website",
+      subtitle: "Deliverables designed for conversion, trust, and ongoing growth.",
+      image: "https://www.figma.com/api/mcp/asset/675ae58d-5522-453d-a408-b4a8b5a01ab5",
+      items: [
+        { icon: "broadcast", title: "Custom UI design", description: "A visual system tailored to your business goals and audience." },
+        { icon: "framework", title: "Page structure", description: "Conversion-oriented sections mapped to buyer questions." },
+        { icon: "performance", title: "Mobile optimization", description: "Faster page experience for mobile-first lead capture." },
+        { icon: "ecosystem", title: "Lead touchpoints", description: "Request Proposal, Request Free Quote, and WhatsApp integrated." },
+      ],
+    },
+    ctaBanner: {
+      badgeText: "Ready to improve lead quality?",
+      titleLineOne: "Stop losing prospects",
+      titleLineTwo: "with a weak website",
+      subtitle: "Get a conversion-focused design proposal built for your business goals.",
+      ratingText: "Trusted by businesses focused on pipeline growth",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/eaf9e64e-7cc6-4116-97b0-8555d3cae1c5",
+    },
+    faqs: [
+      {
+        question: "How long does a web design project usually take?",
+        answer: "Most projects launch in 2-5 weeks depending on scope, content readiness, and revision rounds.",
+      },
+      {
+        question: "Will this help us get more leads?",
+        answer: "Yes. The entire structure is built around clearer offers, trust, and stronger conversion pathways.",
+      },
+      {
+        question: "Can you redesign an existing website?",
+        answer: "Yes. We can redesign your current site while preserving key content and improving conversion performance.",
+      },
+    ],
+    finalCta: {
+      title: "Need a website that brings better leads?",
+      subtitle: "Tell us your offer and goals. We will send a practical proposal with scope, timeline, and pricing.",
+      bullets: [
+        "Conversion-focused wireframe and copy direction",
+        "Design system patterns ready for scale",
+        "Mobile-first performance standards",
+        "Clear timeline and next steps",
+      ],
+    },
+    relatedServices: {
+      title: "Related service pages",
+      subtitle: "Explore the services most businesses combine with web design.",
+      cards: relatedCards,
+    },
+  },
+  "web-development": {
+    slug: "web-development",
+    metadataTitle: "Website Development Services | Fast, Scalable, SEO-Ready Builds",
+    metadataDescription:
+      "Website development services for businesses that need faster pages, better technical SEO, and more qualified inquiries.",
+    hero: {
+      h1: "Website Development Services for High-Intent Lead Generation",
+      badgeText: "Website development",
+      titleLineOne: "Development built",
+      titleLineTwo: "for speed and conversion",
+      subtitle:
+        "We build technical foundations that improve page speed, SEO readiness, and inquiry conversion across your service pages.",
+      ratingText: "Performance-first implementation for growth teams",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/1f165956-d470-43bd-93fb-2d62c7066234",
+    },
+    benefitsTitle: "Why development quality impacts pipeline",
+    benefitsSubtitle: "Technical issues quietly kill conversion. We remove that friction.",
+    benefitsItems: [
+      { title: "Faster load speed", description: "Reduce abandonment from slow pages and increase session quality." },
+      { title: "Better Core Web Vitals", description: "Support both rankings and conversion confidence." },
+      { title: "Scalable architecture", description: "Launch new pages without rebuilding your stack." },
+      { title: "Cleaner technical SEO", description: "Improve crawlability, structure, and metadata consistency." },
+      { title: "Reliable lead forms", description: "Ensure inquiries are captured and routed correctly." },
+      { title: "Deployment confidence", description: "Production-ready implementation for ongoing iteration." },
+    ],
+    audienceTitle: "Who this service is for",
+    audienceSubtitle: "Teams with growth goals blocked by technical limitations.",
+    audienceItems: [
+      { title: "Businesses with outdated codebases", description: "Sites that are hard to maintain and expensive to improve." },
+      { title: "Marketing teams needing speed", description: "Teams losing campaign efficiency due to poor performance." },
+      { title: "Service brands scaling pages", description: "Companies launching more offers, locations, or campaigns." },
+    ],
+    processTitle: "Development process focused on business outcomes",
+    processSubtitle: "Clear milestones from technical planning to production launch.",
+    processSteps: processBase,
+    deliverables: {
+      eyebrow: "What You Get",
+      titleLineOne: "Technical deliverables",
+      titleLineTwo: "that support growth",
+      subtitle: "Implementation that improves visibility, speed, and lead reliability.",
+      image: "https://www.figma.com/api/mcp/asset/9a45ca0f-1cb3-4c94-863b-2a6f589a4da6",
+      items: [
+        { icon: "broadcast", title: "Modern codebase", description: "Clean component architecture for long-term maintainability." },
+        { icon: "framework", title: "Scalable page system", description: "Reusable patterns to publish pages faster with consistency." },
+        { icon: "performance", title: "Performance optimization", description: "Technical tuning for speed and conversion behavior." },
+        { icon: "ecosystem", title: "Lead integration", description: "Reliable forms, CTA flows, and WhatsApp pathways." },
+      ],
+    },
+    ctaBanner: {
+      badgeText: "Need a stronger technical foundation?",
+      titleLineOne: "Upgrade your stack",
+      titleLineTwo: "to convert better",
+      subtitle: "Request a development proposal aligned with your growth priorities.",
+      ratingText: "Built for performance, SEO, and lead quality",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/4f3985a6-d756-48a4-8db6-cd3dba920c9f",
+    },
+    faqs: [
+      {
+        question: "Can you improve an existing site without full redesign?",
+        answer: "Yes. We can optimize architecture, speed, and conversion flows while preserving your visual direction.",
+      },
+      {
+        question: "Do you handle deployment?",
+        answer: "Yes. We handle production deployment, QA, and post-launch technical checks.",
+      },
+      {
+        question: "Do you include technical SEO setup?",
+        answer: "Yes. Semantic structure, metadata, and internal linking are part of our development process.",
+      },
+    ],
+    finalCta: {
+      title: "Need technical implementation that drives leads?",
+      subtitle: "Share your current setup and goals. We will propose a practical build plan and timeline.",
+      bullets: [
+        "Technical audit and implementation roadmap",
+        "Component-based architecture",
+        "Performance and SEO baseline",
+        "Lead flow QA before launch",
+      ],
+    },
+    relatedServices: {
+      title: "Related service pages",
+      subtitle: "Pair development with the right conversion services.",
+      cards: relatedCards,
+    },
+  },
+  "ecommerce-websites": {
+    slug: "ecommerce-websites",
+    metadataTitle: "Ecommerce Website Services | Stores Built to Convert More Orders",
+    metadataDescription:
+      "Ecommerce websites designed to increase qualified traffic, improve checkout flow, and generate more online sales.",
+    hero: {
+      h1: "Ecommerce Website Services for Brands That Want More Sales",
+      badgeText: "Ecommerce websites",
+      titleLineOne: "Ecommerce websites",
+      titleLineTwo: "built for conversion",
+      subtitle:
+        "We design and develop ecommerce experiences that reduce friction, increase trust, and convert more product-page traffic.",
+      ratingText: "Store experiences designed for revenue growth",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/3034752b-076d-4c4f-a5bc-8c46ef56f804",
+    },
+    benefitsTitle: "Why ecommerce structure directly affects sales",
+    benefitsSubtitle: "Most stores lose revenue in navigation, product pages, and checkout friction.",
+    benefitsItems: [
+      { title: "Clearer product discovery", description: "Help users find the right products faster." },
+      { title: "Higher product-page trust", description: "Improve confidence with stronger layout and proof elements." },
+      { title: "Better cart progression", description: "Reduce drop-offs with clearer path to checkout." },
+      { title: "Mobile checkout readiness", description: "Capture mobile purchase intent with less friction." },
+      { title: "Higher average order value", description: "Use structure and merchandising blocks to increase cart value." },
+      { title: "Trackable revenue flow", description: "Set up analytics-ready structure for optimization decisions." },
+    ],
+    audienceTitle: "Who this service is for",
+    audienceSubtitle: "Great fit for product businesses ready to scale online revenue.",
+    audienceItems: [
+      { title: "Growing product brands", description: "Brands that need a stronger online sales channel." },
+      { title: "Retail businesses going digital", description: "Teams moving from offline sales to ecommerce operations." },
+      { title: "Stores with weak conversion rates", description: "Businesses getting traffic but not enough completed orders." },
+    ],
+    processTitle: "A practical ecommerce delivery process",
+    processSubtitle: "Built around conversion, catalog clarity, and checkout flow.",
+    processSteps: processBase,
+    deliverables: {
+      eyebrow: "What You Get",
+      titleLineOne: "Store architecture",
+      titleLineTwo: "designed for orders",
+      subtitle: "Everything needed to launch an ecommerce flow that converts better.",
+      image: "https://www.figma.com/api/mcp/asset/66fc17c0-5724-402c-9c5d-50a8e15d1846",
+      items: [
+        { icon: "broadcast", title: "Catalog structure", description: "Clear category and product hierarchy for easier discovery." },
+        { icon: "framework", title: "Product page UX", description: "Layouts that answer buyer objections quickly." },
+        { icon: "performance", title: "Checkout optimization", description: "Fewer steps and cleaner form flow to reduce abandonment." },
+        { icon: "ecosystem", title: "Conversion tracking", description: "Event-ready setup for performance and revenue insights." },
+      ],
+    },
+    ctaBanner: {
+      badgeText: "Want more completed orders?",
+      titleLineOne: "Fix the conversion",
+      titleLineTwo: "gaps in your store",
+      subtitle: "Request a proposal for an ecommerce website designed for measurable sales growth.",
+      ratingText: "Ecommerce builds focused on ROI",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/fd35c08b-be23-492a-a7f3-3611f626fda9",
+    },
+    faqs: [
+      {
+        question: "Can you rebuild our current ecommerce site?",
+        answer: "Yes. We can redesign and rebuild your store while improving conversion structure and performance.",
+      },
+      {
+        question: "Do you optimize product and checkout pages?",
+        answer: "Yes. Product-page hierarchy and checkout flow are core priorities in every ecommerce project.",
+      },
+      {
+        question: "Can you integrate analytics and tracking?",
+        answer: "Yes. We implement event-ready structures so you can measure funnel performance and improve results.",
+      },
+    ],
+    finalCta: {
+      title: "Need an ecommerce site that sells more?",
+      subtitle: "Tell us your catalog and growth targets. We will propose a conversion-focused ecommerce roadmap.",
+      bullets: [
+        "Store architecture and product-page strategy",
+        "Checkout flow optimization",
+        "Mobile-first ecommerce UX",
+        "Conversion and revenue tracking setup",
+      ],
+    },
+    relatedServices: {
+      title: "Related service pages",
+      subtitle: "Combine ecommerce with complementary growth services.",
+      cards: relatedCards,
+    },
+  },
+  "website-redesign": {
+    slug: "website-redesign",
+    metadataTitle: "Website Redesign Services | Upgrade Your Site for More Leads",
+    metadataDescription:
+      "Website redesign services for businesses with outdated sites that need stronger trust, better SEO, and more qualified inquiries.",
+    hero: {
+      h1: "Website Redesign Services for Businesses That Need Better Results",
+      badgeText: "Website redesign",
+      titleLineOne: "Redesign your site",
+      titleLineTwo: "to increase inquiries",
+      subtitle:
+        "We redesign outdated websites into conversion-focused systems that improve trust, usability, and lead quality.",
+      ratingText: "Redesign projects built for measurable business impact",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/eaf9e64e-7cc6-4116-97b0-8555d3cae1c5",
+    },
+    benefitsTitle: "Why redesign instead of patching your old site",
+    benefitsSubtitle: "Incremental fixes often keep the same conversion problems in place.",
+    benefitsItems: [
+      { title: "Modernized trust signals", description: "Replace outdated visuals with stronger credibility cues." },
+      { title: "Improved content hierarchy", description: "Make your offer easier to understand and act on." },
+      { title: "Cleaner user flow", description: "Guide users from first scroll to inquiry action." },
+      { title: "Better local SEO structure", description: "Align headings, metadata, and intent pages correctly." },
+      { title: "Mobile-first experience", description: "Improve usability where most service searches happen." },
+      { title: "Higher lead quality", description: "Filter and attract better-fit prospects with clearer messaging." },
+    ],
+    audienceTitle: "Who this service is for",
+    audienceSubtitle: "Ideal for businesses with aging websites and inconsistent lead quality.",
+    audienceItems: [
+      { title: "Sites older than 2-3 years", description: "Websites with outdated UX and weak conversion architecture." },
+      { title: "Businesses rebranding", description: "Teams needing a stronger, more consistent digital presence." },
+      { title: "Teams with low inquiry quality", description: "Companies attracting traffic but not the right prospects." },
+    ],
+    processTitle: "A redesign process focused on conversion impact",
+    processSubtitle: "We redesign your site with clear intent, not cosmetic changes only.",
+    processSteps: processBase,
+    deliverables: {
+      eyebrow: "What You Get",
+      titleLineOne: "A full redesign",
+      titleLineTwo: "built around outcomes",
+      subtitle: "Every redesign decision supports trust, clarity, and lead generation.",
+      image: "https://www.figma.com/api/mcp/asset/ca337080-94cb-422c-8be2-e4bb50ec6c44",
+      items: [
+        { icon: "broadcast", title: "New visual direction", description: "Modern design language aligned with business positioning." },
+        { icon: "framework", title: "Content restructure", description: "Service narratives rewritten for clarity and action." },
+        { icon: "performance", title: "UX and speed upgrades", description: "Faster, cleaner interactions across key pages." },
+        { icon: "ecosystem", title: "Lead flow refresh", description: "Updated CTAs, forms, and WhatsApp touchpoints." },
+      ],
+    },
+    ctaBanner: {
+      badgeText: "Outdated site, outdated results",
+      titleLineOne: "Redesign your website",
+      titleLineTwo: "for better pipeline",
+      subtitle: "Request a proposal to rebuild your website around trust and conversion.",
+      ratingText: "Redesigns focused on sales outcomes",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/4f3985a6-d756-48a4-8db6-cd3dba920c9f",
+    },
+    faqs: [
+      {
+        question: "Will redesign hurt our current SEO?",
+        answer: "No. We redesign with SEO continuity in mind and preserve critical structure where needed.",
+      },
+      {
+        question: "Can you keep parts of our existing content?",
+        answer: "Yes. We keep what performs and improve what blocks conversion.",
+      },
+      {
+        question: "How do we measure redesign success?",
+        answer: "We track inquiry quality, conversion actions, and engagement improvements after launch.",
+      },
+    ],
+    finalCta: {
+      title: "Ready to redesign for better lead quality?",
+      subtitle: "Share your current site and goals. We will provide a redesign plan focused on measurable results.",
+      bullets: [
+        "Audit of current conversion blockers",
+        "New UX and messaging architecture",
+        "Performance and mobile improvements",
+        "Conversion-focused launch plan",
+      ],
+    },
+    relatedServices: {
+      title: "Related service pages",
+      subtitle: "Explore services commonly paired with redesign projects.",
+      cards: relatedCards,
+    },
+  },
+  "landing-page-design": {
+    slug: "landing-page-design",
+    metadataTitle: "Landing Page Design Services | Pages Built to Convert Campaign Traffic",
+    metadataDescription:
+      "Landing page design services for businesses running campaigns that need higher conversion rates and more qualified leads.",
+    hero: {
+      h1: "Landing Page Design Services for High-Intent Campaign Traffic",
+      badgeText: "Landing page design",
+      titleLineOne: "Landing pages built",
+      titleLineTwo: "to convert campaign traffic",
+      subtitle:
+        "We design focused landing pages that match user intent, remove friction, and drive more proposal and quote requests.",
+      ratingText: "Landing page strategy focused on conversion rate",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/1f165956-d470-43bd-93fb-2d62c7066234",
+    },
+    benefitsTitle: "Why focused landing pages outperform generic service pages",
+    benefitsSubtitle: "Campaign traffic needs precision, not broad messaging.",
+    benefitsItems: [
+      { title: "Message match", description: "Align ad intent with page promise to reduce bounce rates." },
+      { title: "Single-goal structure", description: "Build each page around one clear conversion action." },
+      { title: "Higher conversion rates", description: "Reduce decision friction with focused content hierarchy." },
+      { title: "Faster experimentation", description: "Launch and test variants faster with reusable page patterns." },
+      { title: "Better lead qualification", description: "Use forms and framing to improve inquiry quality." },
+      { title: "Scalable campaign system", description: "Create repeatable templates for future campaign pages." },
+    ],
+    audienceTitle: "Who this service is for",
+    audienceSubtitle: "Designed for teams actively investing in traffic and campaigns.",
+    audienceItems: [
+      { title: "Paid ads teams", description: "Businesses running Google or social campaigns with weak page conversion." },
+      { title: "Service companies with seasonal offers", description: "Teams launching temporary offers that need focused pages." },
+      { title: "Sales-led organizations", description: "Companies where conversion speed directly affects revenue targets." },
+    ],
+    processTitle: "How we build high-converting landing pages",
+    processSubtitle: "From offer framing to launch-ready conversion pages.",
+    processSteps: processBase,
+    deliverables: {
+      eyebrow: "What You Get",
+      titleLineOne: "Campaign-ready pages",
+      titleLineTwo: "built for action",
+      subtitle: "Landing page deliverables optimized for speed and conversion quality.",
+      image: "https://www.figma.com/api/mcp/asset/dcd613ff-b269-4ed0-8027-5155270c3c88",
+      items: [
+        { icon: "broadcast", title: "Offer-first structure", description: "Headline and section sequence aligned to buyer intent." },
+        { icon: "framework", title: "CTA hierarchy", description: "Request Proposal and Request Free Quote positioned for action." },
+        { icon: "performance", title: "Speed-first implementation", description: "Fast loading pages for paid traffic efficiency." },
+        { icon: "ecosystem", title: "Lead capture integration", description: "Forms and WhatsApp pathways tuned for campaign leads." },
+      ],
+    },
+    ctaBanner: {
+      badgeText: "Campaign traffic deserves better conversion",
+      titleLineOne: "Launch landing pages",
+      titleLineTwo: "that convert better",
+      subtitle: "Request a proposal and get a focused landing page strategy for your next campaign.",
+      ratingText: "Conversion-focused landing page delivery",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/fd35c08b-be23-492a-a7f3-3611f626fda9",
+    },
+    faqs: [
+      {
+        question: "How many landing pages should we start with?",
+        answer: "Most businesses start with one core page per offer and expand once conversion data is available.",
+      },
+      {
+        question: "Can you design pages for paid campaigns and SEO?",
+        answer: "Yes. We can structure pages for campaign traffic and search intent without conflicting goals.",
+      },
+      {
+        question: "Do you include form optimization?",
+        answer: "Yes. Form fields and CTA flow are part of every landing page design project.",
+      },
+    ],
+    finalCta: {
+      title: "Need landing pages that convert more traffic?",
+      subtitle: "Share your offer and campaign goals. We will propose a conversion-focused page strategy.",
+      bullets: [
+        "Offer and audience positioning",
+        "Focused conversion flow",
+        "Fast implementation and testing",
+        "Clear CTA and form optimization",
+      ],
+    },
+    relatedServices: {
+      title: "Related service pages",
+      subtitle: "Explore services that improve campaign and website performance.",
+      cards: relatedCards,
+    },
+  },
+  "maintenance-support": {
+    slug: "maintenance-support",
+    metadataTitle: "Website Maintenance and Support | Keep Your Site Fast and Reliable",
+    metadataDescription:
+      "Maintenance and support services to keep your website secure, fast, updated, and conversion-ready.",
+    hero: {
+      h1: "Website maintenance and support services for business continuity",
+      badgeText: "Maintenance and support",
+      titleLineOne: "Keep your website",
+      titleLineTwo: "performing every day",
+      subtitle:
+        "We provide proactive support, updates, and optimization to protect your lead flow and website performance.",
+      ratingText: "Ongoing support built for reliability and growth",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/4f3985a6-d756-48a4-8db6-cd3dba920c9f",
+    },
+    benefitsTitle: "Why maintenance matters for conversion",
+    benefitsSubtitle: "A broken or slow site silently reduces leads and trust.",
+    benefitsItems: [
+      { title: "Ongoing stability", description: "Keep your pages online and functional for every campaign and referral." },
+      { title: "Security and updates", description: "Protect your site and reduce risk from outdated dependencies." },
+      { title: "Performance consistency", description: "Keep speed and usability aligned with conversion goals." },
+      { title: "Lead flow monitoring", description: "Ensure forms and WhatsApp links are always working correctly." },
+      { title: "Content support", description: "Publish updates quickly without breaking design consistency." },
+      { title: "Scalable upkeep", description: "Support growth with predictable technical management." },
+    ],
+    audienceTitle: "Who this service is for",
+    audienceSubtitle: "For businesses that need website reliability, not maintenance headaches.",
+    audienceItems: [
+      { title: "Teams without internal tech support", description: "Need reliable external management and fast issue resolution." },
+      { title: "Businesses running ongoing campaigns", description: "Need stable landing pages and uninterrupted conversion flow." },
+      { title: "Growing service brands", description: "Need regular updates while keeping visual and technical quality." },
+    ],
+    processTitle: "Support process built for continuity",
+    processSubtitle: "Structured maintenance that keeps your website conversion-ready.",
+    processSteps: processBase,
+    deliverables: {
+      eyebrow: "What You Get",
+      titleLineOne: "Proactive support",
+      titleLineTwo: "for website performance",
+      subtitle: "Maintenance and support focused on uptime, speed, and lead integrity.",
+      image: "https://www.figma.com/api/mcp/asset/9a45ca0f-1cb3-4c94-863b-2a6f589a4da6",
+      items: [
+        { icon: "broadcast", title: "Update management", description: "Keep framework and dependencies current and stable." },
+        { icon: "framework", title: "Issue resolution", description: "Fix technical issues quickly with clear communication." },
+        { icon: "performance", title: "Performance checks", description: "Monitor and improve critical pages regularly." },
+        { icon: "ecosystem", title: "Lead pathway QA", description: "Validate forms, CTA links, and WhatsApp flow consistently." },
+      ],
+    },
+    ctaBanner: {
+      badgeText: "Don’t let technical issues block sales",
+      titleLineOne: "Protect your lead flow",
+      titleLineTwo: "with ongoing support",
+      subtitle: "Request a support proposal to keep your website reliable and conversion-ready.",
+      ratingText: "Support designed for business continuity",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/eaf9e64e-7cc6-4116-97b0-8555d3cae1c5",
+    },
+    faqs: [
+      {
+        question: "How quickly do you handle urgent issues?",
+        answer: "We prioritize urgent incidents and provide clear response timelines based on severity.",
+      },
+      {
+        question: "Can you maintain websites built by other teams?",
+        answer: "Yes. We can onboard and maintain existing websites after a technical review.",
+      },
+      {
+        question: "Do you include performance optimization in support?",
+        answer: "Yes. Performance checks and optimization are included in the maintenance workflow.",
+      },
+    ],
+    finalCta: {
+      title: "Need ongoing website support you can rely on?",
+      subtitle: "Tell us your current stack and support needs. We will send a practical maintenance roadmap.",
+      bullets: [
+        "Update and security management",
+        "Priority issue handling",
+        "Performance and conversion checks",
+        "Reliable support communication",
+      ],
+    },
+    relatedServices: {
+      title: "Related service pages",
+      subtitle: "Combine support with conversion-focused implementation services.",
+      cards: relatedCards,
+    },
+  },
+  "custom-website-solutions": {
+    slug: "custom-website-solutions",
+    metadataTitle: "Custom Website Solutions | Advanced Integrations and Multi-Location Systems",
+    metadataDescription:
+      "Custom website solutions for complex business models, advanced workflows, integrations, and multi-location growth.",
+    hero: {
+      h1: "Custom website solutions for complex business growth",
+      badgeText: "Custom website solutions",
+      titleLineOne: "Custom architecture",
+      titleLineTwo: "for advanced business workflows",
+      subtitle:
+        "Tailored digital systems for businesses that need custom integrations, automation, and multi-location lead generation.",
+      ratingText: "Tailored implementation for high-complexity projects",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/1f165956-d470-43bd-93fb-2d62c7066234",
+    },
+    benefitsTitle: "Why custom solutions create strategic advantage",
+    benefitsSubtitle: "When templates are not enough, architecture becomes a growth lever.",
+    benefitsItems: [
+      { title: "Business-model alignment", description: "Build a website that reflects your real operational complexity." },
+      { title: "Advanced integrations", description: "Connect CRM, automation, and internal workflows seamlessly." },
+      { title: "Multi-location scalability", description: "Deploy structured pages by city, service, and audience." },
+      { title: "Custom conversion logic", description: "Design lead paths based on your specific sales process." },
+      { title: "Operational efficiency", description: "Reduce manual steps with better digital systems." },
+      { title: "Long-term flexibility", description: "Create an architecture that evolves with your business." },
+    ],
+    audienceTitle: "Who this service is for",
+    audienceSubtitle: "For companies that need more than a standard website build.",
+    audienceItems: [
+      { title: "Multi-location businesses", description: "Need page systems segmented by city and market." },
+      { title: "Premium service companies", description: "Need custom flows for high-value lead qualification." },
+      { title: "Businesses with advanced ops", description: "Need integrations and automation tied to conversion." },
+    ],
+    processTitle: "Custom solution process with clear milestones",
+    processSubtitle: "From strategy and architecture to implementation and scale.",
+    processSteps: processBase,
+    deliverables: {
+      eyebrow: "What You Get",
+      titleLineOne: "Custom systems",
+      titleLineTwo: "for conversion and scale",
+      subtitle: "A roadmap and implementation layer aligned with your business model.",
+      image: "https://www.figma.com/api/mcp/asset/ca337080-94cb-422c-8be2-e4bb50ec6c44",
+      items: [
+        { icon: "broadcast", title: "Custom strategy architecture", description: "Define conversion systems by market and service." },
+        { icon: "framework", title: "Advanced integration layer", description: "Connect key tools and workflows for better execution." },
+        { icon: "performance", title: "Scalable implementation", description: "Build flexible structures for long-term growth." },
+        { icon: "ecosystem", title: "Priority roadmap delivery", description: "Execute in phases based on business impact." },
+      ],
+    },
+    ctaBanner: {
+      badgeText: "Need a custom conversion architecture?",
+      titleLineOne: "Build a system",
+      titleLineTwo: "designed for your business",
+      subtitle: "Request a tailored proposal for custom workflows, integrations, and multi-location growth.",
+      ratingText: "Custom implementation for complex growth goals",
+      backgroundImage: "https://www.figma.com/api/mcp/asset/fd35c08b-be23-492a-a7f3-3611f626fda9",
+    },
+    faqs: [
+      {
+        question: "Can you build custom workflows and automations?",
+        answer: "Yes. We can design and implement workflows aligned with your sales and operations process.",
+      },
+      {
+        question: "Can this scale across multiple cities or markets?",
+        answer: "Yes. Multi-location and segmented content architecture is one of our core capabilities.",
+      },
+      {
+        question: "Is custom pricing fixed?",
+        answer: "No. Custom pricing is tailored to scope, integrations, complexity, and roadmap priorities.",
+      },
+    ],
+    finalCta: {
+      title: "Need a custom website strategy for complex growth?",
+      subtitle: "Share your business model and requirements. We will build a proposal tailored to your workflow.",
+      bullets: [
+        "Custom strategy and architecture",
+        "Advanced integrations and automation",
+        "Multi-location content systems",
+        "Priority implementation roadmap",
+      ],
+    },
+    relatedServices: {
+      title: "Related service pages",
+      subtitle: "Explore additional services that support custom implementation.",
+      cards: relatedCards,
+    },
+  },
+};

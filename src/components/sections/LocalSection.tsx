@@ -45,30 +45,24 @@ const stats = [
 
 export function LocalSection() {
   return (
-    <section className="section-padding relative overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900/80 to-zinc-950">
-      {/* Background */}
-      <div
-        className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/4 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"
-      />
-
+    <section className="section-padding relative overflow-hidden bg-[#f6f6f6]">
       <Container>
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left: copy */}
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
               <SectionLabel>Built for Punta Cana</SectionLabel>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-                We know what works for{" "}
-                <span className="gradient-text">businesses here</span>
+              <h2 className="below-hero-title leading-[70px]">
+                <span className="block">We know what works for</span>
+                <span className="block">businesses here</span>
               </h2>
-              <p className="text-lg text-zinc-400 leading-relaxed">
+              <p className="text-base leading-[22.4px] text-[#3d3d3d]">
                 Punta Cana is one of the fastest-growing tourism and real estate
                 markets in the Caribbean. Your clients — whether local or
                 international — are online, and they&apos;re making decisions
                 based on what they find on Google and Instagram.
               </p>
-              <p className="text-zinc-400 leading-relaxed">
+              <p className="text-base leading-[22.4px] text-[#3d3d3d]">
                 We build websites specifically for businesses in Punta Cana that
                 want to grow — not just have a digital presence. Our sites are
                 designed to attract the right audience, build trust instantly,
@@ -81,12 +75,12 @@ export function LocalSection() {
               {stats.map((stat) => (
                 <div
                   key={stat.value}
-                  className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 text-center"
+                  className="rounded-[4px] border border-black/10 bg-white p-4 text-center shadow-sm"
                 >
-                  <div className="text-2xl font-black text-amber-400">
+                  <div className="text-2xl font-medium text-[#413df2]">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-zinc-500 mt-1 leading-snug">
+                  <div className="mt-1 text-xs leading-snug text-[#3d3d3d]">
                     {stat.label}
                   </div>
                 </div>
@@ -109,7 +103,7 @@ export function LocalSection() {
 
           {/* Right: sectors */}
           <div>
-            <p className="text-sm text-zinc-500 font-semibold uppercase tracking-widest mb-6">
+            <p className="mb-6 text-sm font-medium uppercase tracking-widest text-[#3d3d3d]">
               Industries we work with
             </p>
             <div className="grid gap-3">
@@ -118,14 +112,14 @@ export function LocalSection() {
                 return (
                   <div
                     key={sector.label}
-                    className="flex items-start gap-4 rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 hover:border-zinc-700 transition-colors duration-200"
+                    className="flex items-start gap-4 rounded-[4px] border border-black/10 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
-                      <Icon size={16} className="text-amber-400" aria-hidden="true" />
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] border border-black/10 bg-[#f6f6f6]">
+                      <Icon size={16} className="text-[#413df2]" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-white">{sector.label}</h3>
-                      <p className="text-xs text-zinc-500 mt-0.5 leading-relaxed">
+                      <h3 className="text-base font-medium text-[#1e1e1e]">{sector.label}</h3>
+                      <p className="mt-0.5 text-sm leading-relaxed text-[#3d3d3d]">
                         {sector.description}
                       </p>
                     </div>

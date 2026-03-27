@@ -5,30 +5,26 @@ import { getWhatsAppUrl } from "@/lib/utils";
 
 export function CTAMid() {
   return (
-    <section className="py-20 bg-gradient-to-b from-zinc-950 via-amber-950/10 to-zinc-950 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"
-        aria-hidden="true"
-      />
+    <section className="section-padding relative overflow-hidden bg-[#070707]">
+      {/* Subtle amber glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-amber-500/8 rounded-full blur-3xl pointer-events-none"
         aria-hidden="true"
       />
 
       <Container size="md">
-        <div className="relative rounded-3xl border border-amber-500/20 bg-gradient-to-br from-zinc-900 to-zinc-950 p-10 sm:p-14 text-center flex flex-col items-center gap-8">
+        <div className="relative flex flex-col items-center gap-8 rounded-[8px] border border-white/15 bg-black/30 p-10 text-center sm:p-14">
           {/* Badge */}
-          <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
+          <div className="w-14 h-14 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center">
             <span className="text-2xl" role="img" aria-label="rocket">🚀</span>
           </div>
 
           <div className="flex flex-col gap-4">
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight text-balance">
-              Ready to turn your website into{" "}
-              <span className="gradient-text">a client-generating machine?</span>
+            <h2 className="text-[28px] leading-[44px] tracking-[-1.6px] font-medium text-white md:text-[48px] md:leading-[70px] md:tracking-[-2.6px]">
+              <span className="block">Ready to turn your website into</span>
+              <span className="block">a client-generating machine?</span>
             </h2>
-            <p className="text-lg text-zinc-400 max-w-xl text-balance">
+            <p className="max-w-xl text-base leading-[22.4px] text-white/80">
               Tell us about your business. We&apos;ll analyze your situation and
               send you a clear proposal — no pressure, no hidden fees.
             </p>
@@ -47,13 +43,14 @@ export function CTAMid() {
               )}
               target="_blank"
               rel="noopener noreferrer"
+              className="border-slate-600 text-slate-300 hover:border-slate-400 hover:bg-slate-700/50"
             >
               <MessageCircle size={20} />
-              Chat on WhatsApp
+              Hablemos por WhatsApp
             </Button>
           </div>
 
-          <p className="text-xs text-zinc-600">
+          <p className="text-xs text-slate-500">
             Typically respond within 24 hours · No commitment required
           </p>
         </div>

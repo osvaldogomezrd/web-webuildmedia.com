@@ -41,16 +41,16 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="section-padding bg-zinc-900/30">
+    <section id="process" className="section-padding bg-[#f6f6f6]">
       <Container size="lg">
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center gap-4">
           <SectionLabel>How we work</SectionLabel>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight text-balance">
-            From idea to live site in{" "}
-            <span className="gradient-text">under 30 days</span>
+          <h2 className="below-hero-title text-center">
+            <span className="block">From idea to live site in</span>
+            <span className="block">under 30 days</span>
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl text-balance">
+          <p className="max-w-2xl text-base leading-[22.4px] text-[#3d3d3d]">
             Our process is structured, transparent, and fast. You&apos;ll know
             exactly what&apos;s happening at every stage.
           </p>
@@ -58,9 +58,9 @@ export function Process() {
 
         {/* Steps */}
         <div className="relative">
-          {/* Vertical line (desktop) */}
+          {/* Vertical connector line */}
           <div
-            className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-zinc-700/50 to-transparent"
+            className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-300 to-transparent"
             aria-hidden="true"
           />
 
@@ -70,38 +70,28 @@ export function Process() {
               return (
                 <div
                   key={step.number}
-                  className={`relative grid lg:grid-cols-2 gap-6 lg:gap-16 items-center ${
-                    isEven ? "" : "lg:flex-row-reverse"
-                  }`}
+                  className="relative grid lg:grid-cols-2 gap-6 lg:gap-16 items-center"
                 >
                   {/* Card */}
-                  <div
-                    className={`card-dark p-6 rounded-2xl ${
-                      isEven ? "lg:text-right" : "lg:order-2"
-                    }`}
-                  >
-                    <div
-                      className={`flex items-start gap-4 ${
-                        isEven ? "lg:flex-row-reverse" : ""
-                      }`}
-                    >
+                  <div className={`rounded-[4px] border border-black/10 bg-white p-6 shadow-sm ${isEven ? "lg:text-right" : "lg:order-2"}`}>
+                    <div className={`flex items-start gap-4 ${isEven ? "lg:flex-row-reverse" : ""}`}>
                       <div className="shrink-0">
-                        <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-                          <span className="text-amber-400 font-black text-sm">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-[4px] border border-black/10 bg-[#f6f6f6]">
+                          <span className="text-sm font-medium text-[#413df2]">
                             {step.number}
                           </span>
                         </div>
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
-                          <h3 className="text-lg font-bold text-white">
+                          <h3 className="text-[20px] leading-[28px] tracking-[-0.4px] font-medium text-[#1e1e1e]">
                             {step.title}
                           </h3>
-                          <span className="text-[10px] font-semibold text-zinc-500 bg-zinc-800 border border-zinc-700/60 rounded-full px-2 py-0.5">
+                          <span className="rounded-full border border-black/15 bg-[#f6f6f6] px-2 py-0.5 text-[10px] font-medium text-[#3d3d3d]">
                             {step.duration}
                           </span>
                         </div>
-                        <p className="text-sm text-zinc-400 leading-relaxed">
+                        <p className="text-base leading-[22.4px] text-[#3d3d3d]">
                           {step.description}
                         </p>
                       </div>
@@ -109,12 +99,8 @@ export function Process() {
                   </div>
 
                   {/* Center dot */}
-                  <div
-                    className={`hidden lg:flex items-center justify-center absolute left-1/2 -translate-x-1/2 ${
-                      isEven ? "" : ""
-                    }`}
-                  >
-                    <div className="w-4 h-4 rounded-full bg-amber-500 border-4 border-zinc-950 shadow-lg shadow-amber-500/30" />
+                  <div className="hidden lg:flex items-center justify-center absolute left-1/2 -translate-x-1/2">
+                    <div className="h-4 w-4 rounded-full border-4 border-white bg-[#413df2] shadow-md shadow-[#413df2]/30" />
                   </div>
 
                   {/* Empty column spacer */}
