@@ -286,7 +286,7 @@ export function HomeV3Footer({
   description = "Conversion-focused web design and web development for businesses in Punta Cana and Orlando. Built for speed, trust, and qualified leads.",
   serviceLinks,
   extraLinks,
-  whatsappLabel = "Conversar con un agente vía WhatsApp",
+  whatsappLabel = "Hablemos por WhatsApp",
   locale,
 }: {
   homeHref?: string;

@@ -1,123 +1,87 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { getWhatsAppUrl } from "@/lib/utils";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Process", href: "#process" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Overview", href: "#benefits" },
+  { label: "Pages", href: "#services", hasChevron: true },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800/60 py-3"
-          : "bg-transparent py-5"
-      )}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="absolute inset-x-0 top-0 z-50 bg-transparent px-16 pt-5 pb-[21px]">
+      <div className="mx-auto w-full max-w-[1440px]">
         <nav className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group" aria-label="Webuildmedia home">
-            <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center">
-              <span className="text-zinc-950 font-black text-sm leading-none">W</span>
-            </div>
-            <span className="text-white font-bold text-lg tracking-tight">
-              webuild<span className="text-amber-400">media</span>
-            </span>
+          <a
+            href="#"
+            className="shrink-0 text-[24px] font-medium leading-none tracking-tight text-white"
+            aria-label="Webuildmedia home"
+          >
+            webuild<span className="text-[#413df2]">media</span>
           </a>
 
-          {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden flex-1 items-center justify-center gap-8 lg:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-zinc-400 hover:text-white text-sm font-medium transition-colors duration-200"
+                  className="inline-flex items-center gap-1.5 text-base font-medium leading-[22.4px] text-white/90 transition-opacity duration-200 hover:text-white"
                 >
                   {link.label}
+                  {link.hasChevron && <ChevronDown size={16} strokeWidth={2.5} />}
                 </a>
               </li>
             ))}
           </ul>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button
-              variant="secondary"
-              size="sm"
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="hidden shrink-0 lg:flex">
+            <a
+              href="#contact"
+              className="inline-flex h-[46px] items-center justify-center gap-3 rounded-[4px] bg-[#413df2] px-6 text-base font-medium leading-4 text-white transition-opacity duration-200 hover:opacity-90"
             >
-              WhatsApp
-            </Button>
-            <Button variant="primary" size="sm" href="#contact">
-              Get a Proposal
-            </Button>
+              Buy Template
+              <ArrowRight size={16} strokeWidth={2.5} />
+            </a>
           </div>
 
-          {/* Mobile toggle */}
           <button
-            className="md:hidden text-zinc-400 hover:text-white p-1 transition-colors"
+            className="p-1 text-white transition-opacity hover:opacity-70 lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </nav>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-zinc-800 bg-zinc-950/98 backdrop-blur-md">
-          <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3">
+        <div className="border-t border-white/15 bg-black/80 backdrop-blur-sm lg:hidden">
+          <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-3 py-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-zinc-300 hover:text-white text-base font-medium py-2 transition-colors"
+                className="inline-flex items-center gap-1.5 py-2 text-base font-medium leading-[22.4px] text-white"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
+                {link.hasChevron && <ChevronDown size={16} strokeWidth={2.5} />}
               </a>
             ))}
-            <div className="flex flex-col gap-2 pt-2 border-t border-zinc-800">
-              <Button
-                variant="secondary"
-                size="md"
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp
-              </Button>
-              <Button
-                variant="primary"
-                size="md"
+            <div className="pt-2">
+              <a
                 href="#contact"
+                className="inline-flex h-[46px] w-full items-center justify-center gap-3 rounded-[4px] bg-[#413df2] px-6 text-base font-medium leading-4 text-white"
                 onClick={() => setIsOpen(false)}
               >
-                Get a Proposal
-              </Button>
+                Buy Template
+                <ArrowRight size={16} strokeWidth={2.5} />
+              </a>
             </div>
           </div>
         </div>
