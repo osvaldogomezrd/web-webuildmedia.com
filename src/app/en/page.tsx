@@ -7,10 +7,11 @@ export const metadata: Metadata = makePageMetadata({
   title: "Web Design Punta Cana, Miami & Orlando | Request Proposal",
   description:
     "Conversion-focused web design and web development for businesses in Punta Cana, Miami, and Orlando. Request Proposal, Request Free Quote, or chat on WhatsApp.",
-  path: "/",
+  path: "/en",
   languages: makeLanguageAlternates("/", "/en"),
 });
 
-export default function HomePage() {
-  return <HomePageContent locale="es" />;
+export default function EnglishHomePage() {
+  return <HomePageContent locale="en" />;
 }
+

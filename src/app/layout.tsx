@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { headers } from "next/headers";
+import { Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -14,34 +17,48 @@ export const metadata: Metadata = {
   ),
   title: {
     default:
-      "Webuildmedia — Web Design Agency in Punta Cana | Websites That Convert",
+      "Webuildmedia — Web Design & Web Development in Punta Cana, Miami, and Orlando",
     template: "%s | Webuildmedia",
   },
   description:
-    "We design and build strategic websites for businesses in Punta Cana. Turn your website into a lead-generation machine. More visits, more contacts, more sales.",
+    "Conversion-focused web design and web development for businesses in Punta Cana, Miami, and Orlando. Request Proposal, Request Free Quote, or chat on WhatsApp.",
   keywords: [
     "web design Punta Cana",
+    "web design Dominican Republic",
+    "web design Santiago",
+    "web development Punta Cana",
     "Punta Cana web design agency",
-    "websites for Punta Cana businesses",
-    "lead generation web design",
-    "diseño web Punta Cana",
-    "agencia web Punta Cana",
-    "landing page Punta Cana",
-    "real estate website Punta Cana",
-    "tourism website Dominican Republic",
+    "web design Orlando",
+    "web development Orlando",
+    "Orlando web design agency",
+    "web design Miami",
+    "web development Miami",
+    "Miami web design agency",
+    "conversion-focused website design",
+    "websites that generate leads",
+    "SEO-friendly business websites",
+    "website design for real estate",
+    "website design for restaurants",
+    "web design for tourism businesses",
+    "website design for lawyers",
+    "web design for clinics",
+    "ecommerce website design",
+    "landing page design",
+    "website design agency in Punta Cana",
+    "professional website for businesses in Punta Cana",
   ],
   authors: [{ name: "Webuildmedia", url: "https://webuildmedia.com" }],
   creator: "Webuildmedia",
   publisher: "Webuildmedia",
   openGraph: {
     type: "website",
-    locale: "en_US",
-    alternateLocale: "es_DO",
+    locale: "es_DO",
+    alternateLocale: "en_US",
     url: "https://webuildmedia.com",
     siteName: "Webuildmedia",
-    title: "Webuildmedia — Websites That Turn Visits Into Clients",
+    title: "Webuildmedia — Conversion-Focused Websites for Punta Cana, Miami, and Orlando",
     description:
-      "Strategic web design for businesses in Punta Cana. We build websites focused on leads, conversions, and growth — not just looks.",
+      "Strategic web design and web development focused on qualified leads for Punta Cana, Miami, and Orlando businesses.",
     images: [
       {
         url: "/og-image.png",
@@ -53,9 +70,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webuildmedia — Websites That Turn Visits Into Clients",
+    title: "Webuildmedia — Conversion-Focused Websites for Punta Cana, Miami, and Orlando",
     description:
-      "Strategic web design for businesses in Punta Cana. We build websites focused on leads, conversions, and growth.",
+      "Strategic web design and web development for Punta Cana, Miami, and Orlando businesses focused on leads and conversion.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -78,14 +95,40 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const requestHeaders = await headers();
+  const htmlLang = requestHeaders.get("x-html-lang") === "en" ? "en" : "es";
+
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable}`}>
-      <body className="antialiased">{children}</body>
+    <html lang={htmlLang} className={`scroll-smooth ${poppins.variable}`}>
+      <body className="antialiased">
+        {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-NBBJ9LPQG5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-NBBJ9LPQG5');
+          `}
+        </Script>
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "w1xvojs12k");
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
