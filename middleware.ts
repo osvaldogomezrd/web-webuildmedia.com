@@ -10,6 +10,13 @@ function resolveHtmlLang(request: NextRequest): "es" | "en" {
 }
 
 export function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname.toLowerCase();
+  const isVercelRuntime = Boolean(process.env.VERCEL);
+
+  if (isVercelRuntime && (pathname === "/demo" || pathname.startsWith("/demo/"))) {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-html-lang", resolveHtmlLang(request));
 
