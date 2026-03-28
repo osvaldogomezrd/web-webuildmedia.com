@@ -333,36 +333,43 @@ export default function DemoPage() {
                 secondarySubtitleLineTwo="Lanza más rápido y crece sin fricción."
                 features={[
                   {
+                    icon: "framework",
                     title: "Flexible framework",
                     lineOne: "Adapt workflows, tools, and integrations to fit",
                     lineTwo: "your business model without extra complexity.",
                   },
                   {
+                    icon: "seo",
                     title: "SEO-ready growth",
                     lineOne: "Technical structure optimized to rank and attract",
                     lineTwo: "high-intent organic traffic.",
                   },
                   {
+                    icon: "integrations",
                     title: "Smart integrations",
                     lineOne: "Connect forms, CRM, and automations to run",
                     lineTwo: "faster with less manual effort.",
                   },
                   {
+                    icon: "design",
                     title: "Adaptive design",
                     lineOne: "Consistent visual experience across desktop, tablet, and",
                     lineTwo: "mobile to improve trust and action.",
                   },
                   {
+                    icon: "management",
                     title: "Simple management",
                     lineOne: "Update key content and sections without depending on",
                     lineTwo: "complex technical workflows.",
                   },
                   {
+                    icon: "performance",
                     title: "Optimized performance",
                     lineOne: "Fast loading and clean architecture to reduce bounce",
                     lineTwo: "and increase conversion rates.",
                   },
                   {
+                    icon: "mobile",
                     title: "Mobile-first experience",
                     lineOne: "Designed for mobile users where most discovery and",
                     lineTwo: "lead capture actually happens.",

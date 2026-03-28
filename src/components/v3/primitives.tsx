@@ -79,12 +79,16 @@ export function PrimaryCta({
   className,
   target,
   rel,
+  leadingIcon,
+  showArrow = true,
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
   target?: React.HTMLAttributeAnchorTarget;
   rel?: string;
+  leadingIcon?: React.ReactNode;
+  showArrow?: boolean;
 }) {
   return (
     <a
@@ -96,8 +100,9 @@ export function PrimaryCta({
         className
       )}
     >
+      {leadingIcon}
       {children}
-      <ArrowRight size={16} strokeWidth={2.5} />
+      {showArrow ? <ArrowRight size={16} strokeWidth={2.5} /> : null}
     </a>
   );
 }

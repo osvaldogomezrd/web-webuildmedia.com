@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/utils";
 
 const navLinks = [
   { label: "Overview", href: "#benefits" },
@@ -11,6 +12,7 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const whatsappHref = getWhatsAppUrl("Hola, quiero solicitar servicio para mi negocio.");
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 bg-transparent px-16 pt-5 pb-[21px]">
@@ -40,11 +42,13 @@ export function Navbar() {
 
           <div className="hidden shrink-0 lg:flex">
             <a
-              href="#contact"
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-[46px] items-center justify-center gap-3 rounded-[4px] bg-[#413df2] px-6 text-base font-medium leading-4 text-white transition-opacity duration-200 hover:opacity-90"
             >
-              Buy Template
-              <ArrowRight size={16} strokeWidth={2.5} />
+              <MessageCircle size={16} strokeWidth={2.5} />
+              Solicitar servicio
             </a>
           </div>
 
@@ -75,12 +79,14 @@ export function Navbar() {
             ))}
             <div className="pt-2">
               <a
-                href="#contact"
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-[46px] w-full items-center justify-center gap-3 rounded-[4px] bg-[#413df2] px-6 text-base font-medium leading-4 text-white"
                 onClick={() => setIsOpen(false)}
               >
-                Buy Template
-                <ArrowRight size={16} strokeWidth={2.5} />
+                <MessageCircle size={16} strokeWidth={2.5} />
+                Solicitar servicio
               </a>
             </div>
           </div>
