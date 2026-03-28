@@ -28,6 +28,7 @@ import {
 import { LeadFormV3 } from "@/components/v3/lead-form";
 import { BelowFoldCarousel } from "@/components/v3/below-fold-carousel";
 import { AmbientParticlesBackground, type AmbientParticlesConfig } from "@/components/v3/ambient-particles-background";
+import { Hero7ClientSection } from "@/components/v3/hero7-section";
 import {
   PrimaryButton,
   PrimaryCta,
@@ -1202,6 +1203,51 @@ export function Hero4FeatureSection({
         </div>
       </div>
     </section>
+  );
+}
+
+export function Hero7Section({
+  id,
+  eyebrow,
+  titleLineOne,
+  titleLineTwo,
+  subtitleLineOne,
+  subtitleLineTwo,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  overviewImage,
+  fullHeight = false,
+}: {
+  id: string;
+  eyebrow: string;
+  titleLineOne: string;
+  titleLineTwo: string;
+  subtitleLineOne: string;
+  subtitleLineTwo: string;
+  primaryLabel: string;
+  primaryHref: string;
+  secondaryLabel: string;
+  secondaryHref: string;
+  overviewImage: string;
+  fullHeight?: boolean;
+}) {
+  return (
+    <Hero7ClientSection
+      id={id}
+      eyebrow={eyebrow}
+      titleLineOne={titleLineOne}
+      titleLineTwo={titleLineTwo}
+      subtitleLineOne={subtitleLineOne}
+      subtitleLineTwo={subtitleLineTwo}
+      primaryLabel={primaryLabel}
+      primaryHref={primaryHref}
+      secondaryLabel={secondaryLabel}
+      secondaryHref={secondaryHref}
+      overviewImage={overviewImage}
+      fullHeight={fullHeight}
+    />
   );
 }
 
