@@ -18,6 +18,7 @@ import {
   Hero2BlueSection,
   Hero3CenteredProofSection,
   Hero4FeatureSection,
+  Hero7Section,
   HoverRevealServicesSection,
   HowItWorksGridSection,
   KeyFeatureGridSection,
@@ -290,6 +291,23 @@ export default function DemoPage() {
                   "https://www.figma.com/api/mcp/asset/83a00856-911e-41ff-b160-14866580680e",
                   "https://www.figma.com/api/mcp/asset/fbb82343-f0fa-4812-bb8e-14ce8f4666c0",
                 ]}
+              />
+            </StoryFrame>
+
+            <StoryFrame id="story-hero-7" title="Hero 7 (84:5378)" category="Heros">
+              <Hero7Section
+                id="demo-hero-7"
+                eyebrow="Diseño web para crecimiento real"
+                titleLineOne="Sitios web que generan"
+                titleLineTwo="leads de calidad"
+                subtitleLineOne="Diseño orientado a conversión y estructura clara para atraer mejores clientes,"
+                subtitleLineTwo="acelerar decisiones y cerrar más ventas para tu negocio."
+                primaryLabel="Solicitar propuesta"
+                primaryHref="#"
+                secondaryLabel="Ver planes"
+                secondaryHref="#"
+                overviewImage="https://www.figma.com/api/mcp/asset/c3255cb7-48cf-4ed7-aaa4-e2eece3c8822"
+                fullHeight
               />
             </StoryFrame>
           </section>

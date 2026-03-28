@@ -1,8 +1,8 @@
 import {
   BelowTheFoldSection,
   ClientVoicesCarouselSection,
-  DarkOverlayHeroSection,
   FeaturedBlackSection,
+  Hero7Section,
   HoverRevealServicesSection,
   LeadCaptureSection,
   PricingItem,
@@ -154,45 +154,27 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
           ctaLabel={isEs ? "Solicitar cotizacion gratis" : "Request Free Quote"}
           navItems={navItems}
         />
-        <DarkOverlayHeroSection
+        <Hero7Section
           id="hero"
-          backgroundImage="https://www.figma.com/api/mcp/asset/eaf9e64e-7cc6-4116-97b0-8555d3cae1c5"
-          showParticles
-          particleConfig={{
-            particleCount: 54,
-            speed: 0.15,
-            opacity: 0.18,
-            minSize: 0.8,
-            maxSize: 2.1,
-            accentRatio: 0.06,
-            mobileDensity: 0.56,
-          }}
-          badgeText={isEs ? "Diseño web para crecimiento real" : "Web design for real growth"}
+          eyebrow={isEs ? "Diseño web para crecimiento real" : "Web design for real growth"}
           titleLineOne={isEs ? "Sitios web que generan" : "Websites that generate"}
           titleLineTwo={isEs ? "leads de calidad" : "qualified leads"}
-          subtitle={
+          subtitleLineOne={
             isEs
-              ? "Diseño orientado a conversión, estructura clara para atraer mejores clientes y cerrar más ventas."
-              : "Conversion-focused design, clear structure to attract better clients and close more sales."
+              ? "Diseño orientado a conversión y estructura clara para atraer mejores clientes,"
+              : "Conversion-focused design and a clear structure to attract better clients,"
           }
-          supportPoints={
+          subtitleLineTwo={
             isEs
-              ? [
-                  "Diseñado para conversión y generación de leads",
-                  "Adaptado a tu tipo de negocio",
-                  "Planes claros sin costos ocultos",
-                ]
-              : [
-                  "Built for conversion and lead generation",
-                  "Adapted to your business model",
-                  "Clear plans with no hidden costs",
-                ]
+              ? "acelerar decisiones y cerrar más ventas para tu negocio."
+              : "speed up decisions, and close more sales for your business."
           }
-          contentMaxWidthClass="max-w-[920px]"
           primaryLabel={isEs ? "Solicitar propuesta" : "Request Proposal"}
           primaryHref="#lead-form"
           secondaryLabel={isEs ? "Ver planes" : "View Plans"}
           secondaryHref="#plans-preview"
+          overviewImage="https://www.figma.com/api/mcp/asset/c3255cb7-48cf-4ed7-aaa4-e2eece3c8822"
+          fullHeight
         />
       </div>
 
