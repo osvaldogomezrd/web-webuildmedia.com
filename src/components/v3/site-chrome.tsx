@@ -58,15 +58,13 @@ const defaultHeaderNav: HeaderNavItem[] = [
   {
     label: "Ubicaciones",
     children: [
-      { label: "Diseño web Punta Cana", href: "/locations/punta-cana" },
-      { label: "Diseño web República Dominicana", href: "/locations/dominican-republic" },
-      { label: "Diseño web Santiago", href: "/locations/santiago" },
-      { label: "Web design Miami", href: "/locations/miami" },
-      { label: "Web design Orlando", href: "/locations/orlando" },
-      { label: "Ver todas las ubicaciones", href: "/locations" },
+      { label: "Diseño web Punta Cana", href: "/ubicaciones/punta-cana" },
+      { label: "Diseño web República Dominicana", href: "/ubicaciones/republica-dominicana" },
+      { label: "Diseño web Santiago", href: "/ubicaciones/santiago" },
+      { label: "Web design Miami", href: "/ubicaciones/miami" },
+      { label: "Web design Orlando", href: "/ubicaciones/orlando" },
     ],
   },
-  { label: "Sobre Nosotros", href: "/about-us" },
 ];
 
 export function HomeV3Header({
@@ -289,12 +287,14 @@ const footerColumns = [
     links: [
       { label: "Services", href: "/services" },
       { label: "Industries", href: "/industries" },
-      { label: "Locations", href: "/locations" },
+      { label: "Locations", href: "/ubicaciones/punta-cana" },
       { label: "Plans", href: "/plans" },
       { label: "About Us", href: "/about-us" },
-      { label: "Punta Cana", href: "/locations/punta-cana" },
-      { label: "Miami", href: "/locations/miami" },
-      { label: "Orlando", href: "/locations/orlando" },
+      { label: "Punta Cana", href: "/ubicaciones/punta-cana" },
+      { label: "República Dominicana", href: "/ubicaciones/republica-dominicana" },
+      { label: "Santiago", href: "/ubicaciones/santiago" },
+      { label: "Miami", href: "/ubicaciones/miami" },
+      { label: "Orlando", href: "/ubicaciones/orlando" },
     ],
   },
 ];
