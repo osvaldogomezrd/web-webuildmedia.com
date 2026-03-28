@@ -1058,6 +1058,8 @@ export function Hero2BlueSection({
   secondaryHref,
   image,
   backgroundClass = "bg-[#19174f]",
+  disableTitleClamp = false,
+  disableSubtitleClamp = false,
 }: {
   id: string;
   ratingText: string;
@@ -1070,6 +1072,8 @@ export function Hero2BlueSection({
   secondaryHref: string;
   image: string;
   backgroundClass?: string;
+  disableTitleClamp?: boolean;
+  disableSubtitleClamp?: boolean;
 }) {
   return (
     <section id={id} className={`hero-max-h ${backgroundClass} px-6 pb-[206px] pt-[206px] text-white md:px-10 lg:px-[74px]`}>
@@ -1080,12 +1084,12 @@ export function Hero2BlueSection({
             <p className="text-base leading-[22.4px] text-white">{ratingText}</p>
           </div>
 
-          <h2 className="site-hero-title hero-title-clamp max-w-[760px] ds-h2 text-white">
+          <h2 className={`site-hero-title max-w-[760px] ds-h2 text-white ${disableTitleClamp ? "" : "hero-title-clamp"}`}>
             <span className="block">{titleLineOne}</span>
             <span className="block">{titleLineTwo}</span>
           </h2>
 
-          <p className="hero-copy-clamp max-w-[500px] text-[20px] leading-7 tracking-[-0.4px] text-white/70">{subtitle}</p>
+          <p className={`max-w-[500px] text-[20px] leading-7 tracking-[-0.4px] text-white/70 ${disableSubtitleClamp ? "" : "hero-copy-clamp"}`}>{subtitle}</p>
 
           <div className="flex flex-wrap items-center gap-8">
             <PrimaryCta href={primaryHref}>{primaryLabel}</PrimaryCta>
