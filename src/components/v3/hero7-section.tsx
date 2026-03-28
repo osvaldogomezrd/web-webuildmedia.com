@@ -38,7 +38,7 @@ export function Hero7ClientSection({
     const heading = headingRef.current;
     if (!image || !heading) return;
 
-    const imageStart = window.innerWidth < 768 ? 30 : 52;
+    const imageStart = window.innerWidth < 768 ? 18 : 52;
 
     image.style.willChange = "transform";
     heading.style.willChange = "transform";
@@ -58,9 +58,9 @@ export function Hero7ClientSection({
   return (
     <section
       id={id}
-      className={`${fullHeight ? "min-h-screen min-h-[100svh] max-h-none" : "hero-max-h"} overflow-hidden bg-[linear-gradient(180deg,_#1A1750_0%,_#5506CE_100%)] px-6 text-white md:px-10 lg:px-[74px] ${fullHeight ? "flex flex-col pb-0 pt-[206px]" : "pb-[206px] pt-[206px]"}`}
+      className={`${fullHeight ? "max-h-none md:min-h-screen md:min-h-[100svh]" : "hero-max-h"} overflow-hidden bg-[linear-gradient(180deg,_#1A1750_0%,_#5506CE_100%)] px-6 text-white md:px-10 lg:px-[74px] ${fullHeight ? "flex flex-col pb-8 pt-28 md:pb-0 md:pt-[206px]" : "pb-[206px] pt-[206px]"}`}
     >
-      <div ref={headingRef} className={`mx-auto flex max-w-[1280px] flex-col items-center text-center ${fullHeight ? "pb-10 md:pb-12" : ""}`}>
+      <div ref={headingRef} className={`mx-auto flex max-w-[1280px] flex-col items-center text-center ${fullHeight ? "pb-6 md:pb-12" : ""}`}>
         <p className="text-base font-medium leading-[22.4px] text-white">{eyebrow}</p>
 
         <h2 className="site-hero-title mt-8 max-w-[950px] ds-h2 text-white">
@@ -81,7 +81,7 @@ export function Hero7ClientSection({
         </div>
       </div>
 
-      <div ref={imageRef} className={`${fullHeight ? "mx-auto mt-auto w-full max-w-[1600px]" : "mx-auto mt-[127px] max-w-[1600px]"}`}>
+      <div ref={imageRef} className={`${fullHeight ? "mx-auto mt-8 w-full max-w-[1600px] md:mt-auto" : "mx-auto mt-[127px] max-w-[1600px]"}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={overviewImage} alt="Hero 7 overview" className="w-full object-cover" />
       </div>
