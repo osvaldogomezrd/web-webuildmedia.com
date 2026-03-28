@@ -62,6 +62,10 @@ export function toLocalePath(pathname: string, targetLocale: SiteLocale): string
     if (normalized === "/") return "/en";
     if (normalized === "/diseno-web") return "/en/web-design";
     if (normalized === "/services/diseno-web") return "/en/web-design";
+    if (normalized.startsWith("/ubicaciones/")) {
+      const slug = normalized.replace("/ubicaciones/", "");
+      return `/en/locations/${slug}`;
+    }
     if (normalized.startsWith("/services/")) return "/en";
     if (normalized.startsWith("/industries/")) {
       const esSlug = normalized.replace("/industries/", "") as IndustrySlug;
@@ -73,6 +77,10 @@ export function toLocalePath(pathname: string, targetLocale: SiteLocale): string
 
   if (normalized === "/en") return "/";
   if (normalized === "/en/web-design") return "/services/diseno-web";
+  if (normalized.startsWith("/en/locations/")) {
+    const slug = normalized.replace("/en/locations/", "");
+    return `/ubicaciones/${slug}`;
+  }
   if (normalized.startsWith("/en/industries/")) {
     const enSlug = normalized.replace("/en/industries/", "") as IndustryEnSlug;
     const esSlug = INDUSTRY_EN_TO_ES[enSlug];

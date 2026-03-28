@@ -135,15 +135,13 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
     {
       label: isEs ? "Ubicaciones" : "Locations",
       children: [
-        { label: isEs ? "Diseño web Punta Cana" : "Web design Punta Cana", href: "#lead-form" },
-        { label: isEs ? "Diseño web República Dominicana" : "Web design Dominican Republic", href: "#lead-form" },
-        { label: isEs ? "Diseño web Santiago" : "Web design Santiago", href: "#lead-form" },
-        { label: "Web design Miami", href: "#lead-form" },
-        { label: "Web design Orlando", href: "#lead-form" },
-        { label: isEs ? "Ver todas las ubicaciones" : "View all locations", href: "#lead-form" },
+        { label: "Diseño web Punta Cana", href: isEs ? "/ubicaciones/punta-cana" : "/en/locations/punta-cana" },
+        { label: "Diseño web República Dominicana", href: isEs ? "/ubicaciones/republica-dominicana" : "/en/locations/republica-dominicana" },
+        { label: "Diseño web Santiago", href: isEs ? "/ubicaciones/santiago" : "/en/locations/santiago" },
+        { label: "Web design Miami", href: isEs ? "/ubicaciones/miami" : "/en/locations/miami" },
+        { label: "Web design Orlando", href: isEs ? "/ubicaciones/orlando" : "/en/locations/orlando" },
       ],
     },
-    { label: isEs ? "Sobre Nosotros" : "About Us", href: "#benefits" },
   ];
 
   return (
