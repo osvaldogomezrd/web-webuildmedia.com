@@ -159,6 +159,16 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
         <DarkOverlayHeroSection
           id="hero"
           backgroundImage="https://www.figma.com/api/mcp/asset/eaf9e64e-7cc6-4116-97b0-8555d3cae1c5"
+          showParticles
+          particleConfig={{
+            particleCount: 54,
+            speed: 0.15,
+            opacity: 0.18,
+            minSize: 0.8,
+            maxSize: 2.1,
+            accentRatio: 0.06,
+            mobileDensity: 0.56,
+          }}
           badgeText={isEs ? "Diseño web para crecimiento real" : "Web design for real growth"}
           titleLineOne={isEs ? "Sitios web que generan" : "Websites that generate"}
           titleLineTwo={isEs ? "leads de calidad" : "qualified leads"}
@@ -190,7 +200,7 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
 
       <BelowTheFoldSection
         id="clients-outcomes"
-        titleLineOne={isEs ? "Creamos sistemas web" : "We deliver Innovation"}
+        titleLineOne={isEs ? "Creamos webs" : "We deliver Innovation"}
         titleLineTwo={isEs ? "que generan ventas" : "that drives results"}
         subtitleLineOne={
           isEs
@@ -202,8 +212,6 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
             ? "acelerar decisiones y generar resultados medibles para tu negocio."
             : "accelerate decisions, and drive measurable business outcomes."
         }
-        topCtaLabel={isEs ? "Conoce al equipo" : "Meet the Team"}
-        topCtaHref="#lead-form"
         stats={[
           {
             value: "95%",
@@ -235,6 +243,7 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
         }
         features={[
           {
+            icon: "framework",
             title: isEs ? "Framework flexible" : "Flexible framework",
             lineOne:
               isEs
@@ -243,6 +252,7 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
             lineTwo: isEs ? "modelo de negocio sin complejidad innecesaria." : "business model without extra complexity.",
           },
           {
+            icon: "seo",
             title: isEs ? "SEO listo para crecer" : "SEO-ready growth",
             lineOne:
               isEs
@@ -251,6 +261,7 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
             lineTwo: isEs ? "tráfico con intención de compra." : "high-intent organic traffic.",
           },
           {
+            icon: "integrations",
             title: isEs ? "Integraciones inteligentes" : "Smart integrations",
             lineOne:
               isEs
@@ -259,6 +270,7 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
             lineTwo: isEs ? "más rápido con menos tareas manuales." : "faster with less manual effort.",
           },
           {
+            icon: "design",
             title: isEs ? "Diseño adaptable" : "Adaptive design",
             lineOne:
               isEs
@@ -267,6 +279,7 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
             lineTwo: isEs ? "mobile para mejorar confianza y respuesta." : "mobile to improve trust and action.",
           },
           {
+            icon: "management",
             title: isEs ? "Gestión simple" : "Simple management",
             lineOne:
               isEs
@@ -275,6 +288,7 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
             lineTwo: isEs ? "procesos técnicos complejos." : "complex technical workflows.",
           },
           {
+            icon: "performance",
             title: isEs ? "Rendimiento optimizado" : "Optimized performance",
             lineOne:
               isEs
@@ -283,6 +297,7 @@ export function HomePageContent({ locale = "es" }: { locale?: Locale }) {
             lineTwo: isEs ? "y aumentar conversiones." : "and increase conversion rates.",
           },
           {
+            icon: "mobile",
             title: isEs ? "Experiencia mobile first" : "Mobile-first experience",
             lineOne:
               isEs

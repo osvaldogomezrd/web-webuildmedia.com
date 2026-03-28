@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
+import { ScrollRevealObserver } from "@/components/scroll-reveal";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -107,6 +108,7 @@ export default async function RootLayout({
     <html lang={htmlLang} className={`scroll-smooth ${poppins.variable}`}>
       <body className="antialiased">
         {children}
+        <ScrollRevealObserver />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NBBJ9LPQG5"
           strategy="afterInteractive"

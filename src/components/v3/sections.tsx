@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { LeadFormV3 } from "@/components/v3/lead-form";
 import { BelowFoldCarousel } from "@/components/v3/below-fold-carousel";
+import { AmbientParticlesBackground, type AmbientParticlesConfig } from "@/components/v3/ambient-particles-background";
 import {
   PrimaryButton,
   PrimaryCta,
@@ -163,6 +164,7 @@ export interface BelowTheFoldStatItem {
 }
 
 export interface BelowTheFoldFeatureItem {
+  icon?: "framework" | "seo" | "integrations" | "design" | "management" | "performance" | "mobile";
   title: string;
   lineOne: string;
   lineTwo: string;
@@ -1421,8 +1423,8 @@ export function BelowTheFoldSection({
   titleLineTwo: string;
   subtitleLineOne: string;
   subtitleLineTwo: string;
-  topCtaLabel: string;
-  topCtaHref: string;
+  topCtaLabel?: string;
+  topCtaHref?: string;
   stats: BelowTheFoldStatItem[];
   secondaryTitleLineOne: string;
   secondaryTitleLineTwo: string;
@@ -1451,7 +1453,7 @@ export function BelowTheFoldSection({
                 <span className="block md:whitespace-nowrap">{subtitleLineTwo}</span>
               </p>
             </div>
-            <PrimaryCta href={topCtaHref}>{topCtaLabel}</PrimaryCta>
+            {topCtaLabel && topCtaHref ? <PrimaryCta href={topCtaHref}>{topCtaLabel}</PrimaryCta> : null}
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-x-[60px] gap-y-8">
@@ -2540,6 +2542,8 @@ export function DarkOverlayHeroSection({
   avatars,
   ratingText,
   maxHeightClass,
+  showParticles = false,
+  particleConfig,
 }: {
   id: string;
   backgroundImage: string;
@@ -2556,6 +2560,8 @@ export function DarkOverlayHeroSection({
   avatars?: string[];
   ratingText?: string;
   maxHeightClass?: string;
+  showParticles?: boolean;
+  particleConfig?: AmbientParticlesConfig;
 }) {
   const hasSocialProof = (avatars?.length ?? 0) > 0 && Boolean(ratingText);
 
@@ -2567,6 +2573,12 @@ export function DarkOverlayHeroSection({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={backgroundImage} alt="Hero background" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-[linear-gradient(47deg,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.28)_52%)]" />
+      {showParticles ? (
+        <>
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(65,61,242,0.12),transparent_55%)]" />
+          <AmbientParticlesBackground {...particleConfig} />
+        </>
+      ) : null}
 
       <div className="relative z-10 flex flex-col gap-16 lg:gap-20">
         <div className={`${contentMaxWidthClass ?? "max-w-[640px]"} space-y-8`}>

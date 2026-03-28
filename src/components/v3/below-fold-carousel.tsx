@@ -1,14 +1,35 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Gem } from "lucide-react";
+import {
+  CheckCircle2,
+  Gem,
+  Globe2,
+  LucideIcon,
+  Network,
+  Puzzle,
+  ShieldCheck,
+  Sparkles,
+  Target,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface BelowFoldFeatureItem {
+  icon?: "framework" | "seo" | "integrations" | "design" | "management" | "performance" | "mobile";
   title: string;
   lineOne: string;
   lineTwo: string;
 }
+
+const belowFoldFeatureIconMap: Record<NonNullable<BelowFoldFeatureItem["icon"]>, LucideIcon> = {
+  framework: Network,
+  seo: Target,
+  integrations: Puzzle,
+  design: Sparkles,
+  management: CheckCircle2,
+  performance: ShieldCheck,
+  mobile: Globe2,
+};
 
 function resolveItemsPerView(width: number) {
   if (width < 768) return 1;
@@ -93,26 +114,30 @@ export function BelowFoldCarousel({
           )}
           style={{ transform: `translateX(-${(currentIndex * 100) / itemsPerView}%)` }}
         >
-          {loopedFeatures.map((feature, idx) => (
-            <div
-              key={`${feature.title}-${idx}`}
-              className="shrink-0 px-2 md:px-3 lg:px-4"
-              style={{ width: `${100 / itemsPerView}%` }}
-            >
-              <article className="h-full rounded-[8px] border border-black/10 bg-white p-8 shadow-[0px_2px_8px_0px_rgba(0,0,0,0.12)]">
-                <div className="mb-[15px] flex h-[45px] w-[45px] items-center justify-center text-[#413df2]">
-                  <Gem size={30} strokeWidth={1.8} />
-                </div>
-                <h3 className="mb-4 text-[clamp(22px,2.5vw,24px)] font-medium leading-[1.2] tracking-[-0.02em] text-[#1e1e1e]">
-                  {feature.title}
-                </h3>
-                <p className="text-base font-medium leading-[22.4px] text-[#3d3d3d]">
-                  <span className="block">{feature.lineOne}</span>
-                  <span className="block">{feature.lineTwo}</span>
-                </p>
-              </article>
-            </div>
-          ))}
+          {loopedFeatures.map((feature, idx) => {
+            const Icon = feature.icon ? belowFoldFeatureIconMap[feature.icon] ?? Gem : Gem;
+
+            return (
+              <div
+                key={`${feature.title}-${idx}`}
+                className="shrink-0 px-2 md:px-3 lg:px-4"
+                style={{ width: `${100 / itemsPerView}%` }}
+              >
+                <article className="h-full rounded-[8px] border border-black/10 bg-white p-8 shadow-[0px_2px_8px_0px_rgba(0,0,0,0.12)]">
+                  <div className="mb-[15px] flex h-[45px] w-[45px] items-center justify-center text-[#413df2]">
+                    <Icon size={30} strokeWidth={1.8} />
+                  </div>
+                  <h3 className="mb-4 text-[clamp(22px,2.5vw,24px)] font-medium leading-[1.2] tracking-[-0.02em] text-[#1e1e1e]">
+                    {feature.title}
+                  </h3>
+                  <p className="text-base font-medium leading-[22.4px] text-[#3d3d3d]">
+                    <span className="block">{feature.lineOne}</span>
+                    <span className="block">{feature.lineTwo}</span>
+                  </p>
+                </article>
+              </div>
+            );
+          })}
         </div>
       </div>
 

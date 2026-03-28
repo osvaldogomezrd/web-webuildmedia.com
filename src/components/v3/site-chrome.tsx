@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, MessageCircle, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -73,7 +73,8 @@ export function HomeV3Header({
   dark = false,
   homeHref = "/",
   ctaHref = "/contact",
-  ctaLabel = "Solicitar cotizacion gratis",
+  ctaLabel = "Solicitar servicio",
+  ctaWhatsappMessage = "Hola, quiero solicitar servicio para mi negocio.",
   navItems,
   navLinks,
 }: {
@@ -81,6 +82,7 @@ export function HomeV3Header({
   homeHref?: string;
   ctaHref?: string;
   ctaLabel?: string;
+  ctaWhatsappMessage?: string;
   navItems?: HeaderNavItem[];
   navLinks?: SimpleNavLink[];
 }) {
@@ -104,6 +106,8 @@ export function HomeV3Header({
     ? "border border-black/10 bg-[#0d0d0f] text-white"
     : "border border-white/10 bg-[#0d0d0f] text-white";
   const isDesktopDropdownOpen = (label: string) => openDesktopDropdown === label;
+  const navbarCtaHref = getWhatsAppUrl(ctaWhatsappMessage);
+  const navbarCtaLabel = "Solicitar servicio";
 
   return (
     <header
@@ -176,8 +180,15 @@ export function HomeV3Header({
         </nav>
 
         <div className="flex items-center gap-3">
-          <PrimaryCta href={ctaHref} className="hidden lg:inline-flex">
-            {ctaLabel}
+          <PrimaryCta
+            href={navbarCtaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            leadingIcon={<MessageCircle size={16} />}
+            showArrow={false}
+            className="hidden lg:inline-flex"
+          >
+            {navbarCtaLabel}
           </PrimaryCta>
 
           <button
@@ -243,8 +254,15 @@ export function HomeV3Header({
               })}
             </nav>
 
-            <PrimaryCta href={ctaHref} className="mt-4 inline-flex w-full justify-center">
-              {ctaLabel}
+            <PrimaryCta
+              href={navbarCtaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              leadingIcon={<MessageCircle size={16} />}
+              showArrow={false}
+              className="mt-4 inline-flex w-full justify-center"
+            >
+              {navbarCtaLabel}
             </PrimaryCta>
           </V3Container>
         </div>
